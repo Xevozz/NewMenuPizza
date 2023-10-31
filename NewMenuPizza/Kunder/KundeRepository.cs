@@ -9,7 +9,7 @@ namespace NewMenuPizza.Kunder;
 
 
 
-public class KundeDictionary
+public class KundeRepository
 {
     
 }
