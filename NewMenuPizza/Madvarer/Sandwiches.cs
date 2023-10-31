@@ -1,5 +1,6 @@
 namespace NewMenuPizza.Madvarer;
 
-public class Burger
-{    
+public class Sandwiches
+{
+    
 }
