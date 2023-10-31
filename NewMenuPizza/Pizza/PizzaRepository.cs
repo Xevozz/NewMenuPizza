@@ -6,13 +6,15 @@ namespace NewMenuPizza.Pizza
     {
         // instans felter
 
-        private Dictionary<int, Pizza> _pizzarepository;
+        private Dictionary<int, Pizza> _pizzarepo;
 
-
-        Dictionary<int, Pizza> PizzaRepository
+        // Properties
+        public Dictionary<int, Pizza> PizzaRepo
         {
-          get { return _pizzarepository; }
-          set { _pizzarepository = value; }
+          get { return _pizzarepo; }
+          set { _pizzarepo = value; }
+
         }
+      
     }
 }
