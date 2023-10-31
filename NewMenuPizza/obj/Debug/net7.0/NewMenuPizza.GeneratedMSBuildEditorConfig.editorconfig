@@ -9,37 +9,37 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NewMenuPizza
 build_property.RootNamespace = NewMenuPizza
-build_property.ProjectDir = /Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/
+build_property.ProjectDir = /Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza
+build_property.MSBuildProjectDirectory = /Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/Pages/Error.cshtml]
+[/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/Pages/Index.cshtml]
+[/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/Pages/Privacy.cshtml]
+[/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/Pages/_ViewImports.cshtml]
+[/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/Pages/_ViewStart.cshtml]
+[/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/Pages/Shared/_Layout.cshtml]
+[/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-j4x2wx1093

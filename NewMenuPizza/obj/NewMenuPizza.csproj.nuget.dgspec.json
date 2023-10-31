@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj": {}
+    "/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj": {}
   },
   "projects": {
-    "/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj": {
+    "/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj",
+        "projectUniqueName": "/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj",
         "projectName": "NewMenuPizza",
-        "projectPath": "/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj",
-        "packagesPath": "/Users/niklaslobpedersen/.nuget/packages/",
-        "outputPath": "/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/obj/",
+        "projectPath": "/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj",
+        "packagesPath": "/Users/sebastianbrinch/.nuget/packages/",
+        "outputPath": "/Users/sebastianbrinch/Projects/NewMenuPizza/NewMenuPizza/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/niklaslobpedersen/.nuget/NuGet/NuGet.Config"
+          "/Users/sebastianbrinch/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -56,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
         }
       }
     }
