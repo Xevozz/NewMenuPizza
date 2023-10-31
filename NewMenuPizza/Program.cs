@@ -23,3 +23,5 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+// Det her har sebastian skrevet
