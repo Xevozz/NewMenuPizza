@@ -1,6 +1,6 @@
 
 
-namespace NewMenuPizza.Drikkevarer
+namespace NewMenuPizza.DrikkevarerFolder
 {
     public class Drikkevarer
     {
