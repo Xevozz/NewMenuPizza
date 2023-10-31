@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj": {}
+    "C:\\Users\\Abdi\\Source\\Repos\\Xevozz\\NewMenuPizza\\NewMenuPizza\\NewMenuPizza.csproj": {}
   },
   "projects": {
-    "/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj": {
+    "C:\\Users\\Abdi\\Source\\Repos\\Xevozz\\NewMenuPizza\\NewMenuPizza\\NewMenuPizza.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj",
+        "projectUniqueName": "C:\\Users\\Abdi\\Source\\Repos\\Xevozz\\NewMenuPizza\\NewMenuPizza\\NewMenuPizza.csproj",
         "projectName": "NewMenuPizza",
-        "projectPath": "/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/NewMenuPizza.csproj",
-        "packagesPath": "/Users/niklaslobpedersen/.nuget/packages/",
-        "outputPath": "/Users/niklaslobpedersen/Desktop/JetBrains/NewMenuPizza/NewMenuPizza/obj/",
+        "projectPath": "C:\\Users\\Abdi\\Source\\Repos\\Xevozz\\NewMenuPizza\\NewMenuPizza\\NewMenuPizza.csproj",
+        "packagesPath": "C:\\Users\\Abdi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Abdi\\Source\\Repos\\Xevozz\\NewMenuPizza\\NewMenuPizza\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/niklaslobpedersen/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Abdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
