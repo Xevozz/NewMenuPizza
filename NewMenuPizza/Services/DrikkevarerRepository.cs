@@ -24,9 +24,19 @@ namespace NewMenuPizza.Services
          * Constructor
          */
 
-        public DrikkevarerRepository()
+        public DrikkevarerRepository(bool mockData = false)
         {
          _drikkevarerRepo = new Dictionary<int, Drikkevarer>();
+
+         if (mockData)
+         {
+          _drikkevarerRepo.Clear();
+          
+          _drikkevarerRepo.Add(1, new Drikkevarer(1, "Pepsi", 25.0));
+          _drikkevarerRepo.Add(2, new Drikkevarer(2, "Pepsi Max", 25.0));
+          _drikkevarerRepo.Add(3, new Drikkevarer(3, "Squash", 25.0));
+          _drikkevarerRepo.Add(4, new Drikkevarer(4, "Faxe Kondi", 25.0));
+         }
         }
         
         /*
