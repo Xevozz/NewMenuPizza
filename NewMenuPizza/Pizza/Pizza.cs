@@ -6,11 +6,11 @@ public class Pizza
 
     private string _navn;
     private int _pris;
-    private int _pizzanummer;
-
+    private int _nummer;
+  
     // properties
 
-    private string Navn
+    public string Navn
     {
         get { return _navn; }
         set { _navn = value; }
@@ -22,10 +22,10 @@ public class Pizza
         set { _pris = value; }
     }
 
-    private int Pizzanummer
+    public int Nummer
     {
-        get { return _pizzanummer; }
-        set { _pizzanummer = value; }
+        get { return _nummer; }
+        set { _nummer = value; }
     }
 
     //  Default Constructor
@@ -34,14 +34,14 @@ public class Pizza
     {
         _navn = "";
         _pris = 0;
-        _pizzanummer = 0;
+        _nummer = 0;
     }
 
-    public Pizza(string navn, int pris, int pizzanummer)
+    public Pizza(string navn, int pris, int nummer)
     {
         _navn = navn;
         _pris = pris;
-        _pris = pizzanummer;
+        _nummer = nummer;
 
     }
 
