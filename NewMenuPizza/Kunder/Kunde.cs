@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Mvc;
+using NewMenuPizza.Pages;
+
 namespace NewMenuPizza.Kunder;
 
 //instans
@@ -11,27 +14,27 @@ public class Kunde
     private string _navn;
     private int _kundenummer;
     private string _tlf;
-    
+
     //properties
 
-    public string _Navn
+    public string Navn
     {
         get { return _navn; }
-        set { _navn = value;  }
+        set { _navn = value; }
     }
-    
-    private int _KundeNummer
+
+    public int KundeNummer
     {
         get { return _kundenummer; }
-        set { _kundenummer = value;  }
+        set { _kundenummer = value; }
     }
-    
-    public string _Tlf
+
+    public string Tlf
     {
         get { return _tlf; }
-        set { _tlf = value;  }
+        set { _tlf = value; }
     }
-    
+
     //konstruktør
 
     public Kunde()
@@ -48,7 +51,7 @@ public class Kunde
         _tlf = tlf;
     }
 
-    public override string ToString()
+public override string ToString()
     {
         return $"{nameof(_navn)}: {_navn}, {nameof(_kundenummer)}: {_kundenummer}, {nameof(_tlf)}: {_tlf}";
     }
