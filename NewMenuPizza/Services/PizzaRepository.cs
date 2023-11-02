@@ -1,7 +1,4 @@
-﻿using AspNetCore;
-using System.Collections.Specialized;
-using System.Diagnostics.Eventing.Reader;
-using System.Security.Cryptography.X509Certificates;
+﻿using NewMenuPizza.PizzaFolder;
 
 namespace NewMenuPizza.Pizza
 {
@@ -23,6 +20,12 @@ namespace NewMenuPizza.Pizza
         {
             _pizzarepo = new Dictionary<int, Pizza>();
         }
+
+        public List<Pizza> HentAllePizza()
+        {
+            return _pizzarepo.Values.ToList();
+        }
+
 
         // Metoder
 
@@ -79,5 +82,6 @@ namespace NewMenuPizza.Pizza
             }
         }
 
+        
     }
 }
