@@ -6,7 +6,7 @@ using NewMenuPizza.PizzaFolderTest;
 
 namespace NewMenuPizza.Pages.Menu;
 
-public class index : PageModel
+public class Index : PageModel
 {
     public List<Drikkevarer> Drikkevarers { get; set; }
     public List<Pizza> Pizzas { get; set; }

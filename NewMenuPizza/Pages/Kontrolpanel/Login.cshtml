@@ -1,0 +1,26 @@
+@page
+@model NewMenuPizza.Pages.Kontrolpanel.Login
+
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<form method="post">
+    <div class="form-group">
+        <label>Brugernavn</label><br />
+        <input class="form-control" asp-for="@Model.Brugernavn" /><br />
+        
+        <label>Kodeord</label><br />
+        <input class="form-control" asp-for="@Model.Kodeord"  /><br />
+        
+        <input type="submit" value="Login" class="btn btn-success"/>
+    </div>
+</form>
+</body>
+</html>
