@@ -20,8 +20,8 @@ public class index : PageModel
         Pizzas = pizzarepo.HentAllePizza();
     }
 
-    public Iactionresult OnPost()
+    public IActionResult OnPost()
     {
-        return RedirectToPage("Drikkevarere");
+        return RedirectToPage("Drikkevarers");
     }
 }

@@ -23,7 +23,8 @@ namespace NewMenuPizza.Services
             if (mockdata )
             {
                 _pizzarepo.Clear();
-                _pizzazrepo.Add(SidsteNummer(), new Pizza("Hawaii," 85, SidsteNummer());
+                _pizzarepo.Add(SidsteNummer(), new Pizza("Hawaii", 85, SidsteNummer()));
+                _pizzarepo.Add(SidsteNummer(), new Pizza("Pepperoni", 85, SidsteNummer()));
                 
             }
         }

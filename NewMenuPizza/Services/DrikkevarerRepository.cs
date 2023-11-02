@@ -32,10 +32,10 @@ namespace NewMenuPizza.Services
          {
           _drikkevarerRepo.Clear();
           
-          _drikkevarerRepo.Add(1, new Drikkevarer(GetSidsteNummer(), "Pepsi", 25.0));
-          _drikkevarerRepo.Add(2, new Drikkevarer(GetSidsteNummer(), "Pepsi Max", 25.0));
-          _drikkevarerRepo.Add(3, new Drikkevarer(GetSidsteNummer(), "Squash", 25.0));
-          _drikkevarerRepo.Add(4, new Drikkevarer(GetSidsteNummer(), "Faxe Kondi", 25.0));
+          _drikkevarerRepo.Add(GetSidsteNummer(), new Drikkevarer(GetSidsteNummer(), "Pepsi", 25.0));
+          _drikkevarerRepo.Add(GetSidsteNummer(), new Drikkevarer(GetSidsteNummer(), "Pepsi Max", 25.0));
+          _drikkevarerRepo.Add(GetSidsteNummer(), new Drikkevarer(GetSidsteNummer(), "Squash", 25.0));
+          _drikkevarerRepo.Add(GetSidsteNummer(), new Drikkevarer(GetSidsteNummer(), "Faxe Kondi", 25.0));
          }
         }
         
