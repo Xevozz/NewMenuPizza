@@ -32,16 +32,18 @@ namespace NewMenuPizza.Services
          {
           _drikkevarerRepo.Clear();
           
-          _drikkevarerRepo.Add(1, new Drikkevarer(1, "Pepsi", 25.0));
-          _drikkevarerRepo.Add(2, new Drikkevarer(2, "Pepsi Max", 25.0));
-          _drikkevarerRepo.Add(3, new Drikkevarer(3, "Squash", 25.0));
-          _drikkevarerRepo.Add(4, new Drikkevarer(4, "Faxe Kondi", 25.0));
+          _drikkevarerRepo.Add(1, new Drikkevarer(GetSidsteNummer(), "Pepsi", 25.0));
+          _drikkevarerRepo.Add(2, new Drikkevarer(GetSidsteNummer(), "Pepsi Max", 25.0));
+          _drikkevarerRepo.Add(3, new Drikkevarer(GetSidsteNummer(), "Squash", 25.0));
+          _drikkevarerRepo.Add(4, new Drikkevarer(GetSidsteNummer(), "Faxe Kondi", 25.0));
          }
         }
         
         /*
          * Methods
          */
+        
+        
 
         public Drikkevarer Tilføj(Drikkevarer drikkevarer)
         {
@@ -72,6 +74,19 @@ namespace NewMenuPizza.Services
         public List<Drikkevarer> HentDrikkevarer()
         {
          return _drikkevarerRepo.Values.ToList();
+        }
+
+        public int GetSidsteNummer()
+        {
+         if (!_drikkevarerRepo.Any())
+         {
+          return 1;
+         }
+         else
+         {
+          int sidsteNummer = _drikkevarerRepo.Keys.Max();
+          return sidsteNummer + 1;
+         }
         }
     }
 }

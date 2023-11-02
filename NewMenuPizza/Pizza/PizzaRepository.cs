@@ -1,4 +1,4 @@
-﻿using AspNetCore;
+﻿//using AspNetCore;
 using System.Collections.Specialized;
 using System.Diagnostics.Eventing.Reader;
 using System.Security.Cryptography.X509Certificates;
@@ -47,7 +47,7 @@ namespace NewMenuPizza.Pizza
             }
             else
             {
-                throw new Exception("Pizzanummer findes ikke");
+                throw new Exception("Nummer findes ikke");
             }
         }
 
@@ -61,7 +61,7 @@ namespace NewMenuPizza.Pizza
             }
             else
             {
-                throw new KeyNotFoundException("Pizzanummer findes ikke");
+                throw new KeyNotFoundException("Nummer findes ikke");
             }
         }
 
