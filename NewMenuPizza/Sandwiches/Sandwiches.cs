@@ -3,7 +3,7 @@ namespace NewMenuPizza.Sandwiches;
 public class Sandwiches
 {
     private string _name;
-    private int _price;
+    private double _price;
     private int _number;
 
 
@@ -13,7 +13,7 @@ public class Sandwiches
         set { _name = value; }
     }
 
-    public int Pris
+    public double Pris
     {
         get { return _price; }
         set { _price = value; }
@@ -26,14 +26,14 @@ public class Sandwiches
     }
 
 
-    public Sandwich()
+    public Sandwiches()
     {
         _name = "";
         _price = 0;
         _number = 0;
     }
 
-    public Sandwich(string navn, int pris, int nummer)
+    public Sandwiches(string navn, double pris, int nummer)
     {
         _name = navn;
         _price = pris;
@@ -46,7 +46,5 @@ public class Sandwiches
     {
         return $"{{{nameof(Pris)}={Pris.ToString()}}}";
     }
-
-}
 
 }

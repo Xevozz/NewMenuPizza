@@ -34,14 +34,11 @@ public class KundeRepository
         {
             _katalog.Clear();
 
-            _katalog.Add(1, new Kunde(Jens, 1, "11223344"));
+            _katalog.Add(1, new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(2, new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(3, new Kunde("Emil", GetSidsteNummer(), "11223344"));
 
         }
-
-
-
-
-
         
          //metoder
          
@@ -99,6 +96,19 @@ public class KundeRepository
             }
 
             return resKunde;
+        }
+
+        public int GetSidsteNummer()
+        {
+            if (!_katalog.Any())
+            {
+                return 1;
+            }
+            else
+            {
+                int sidsteNummer = _katalog.Keys.Max();
+                return sidsteNummer + 1;
+            }
         }
 
         public override string ToString()

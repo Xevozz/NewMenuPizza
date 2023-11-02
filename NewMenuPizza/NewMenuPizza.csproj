@@ -13,6 +13,7 @@
     <ItemGroup>
       <Compile Remove="Kunder\OpretKunde.cs" />
       <Compile Remove="Kunder\OpretKund.cs" />
+      <Compile Remove="Kunder\KundeKatalog.cs" />
     </ItemGroup>
 
 </Project>
