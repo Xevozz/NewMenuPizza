@@ -9,7 +9,7 @@ namespace NewMenuPizza.Pizza
     {
         // instans felter
 
-        private Dictionary<int, Pizza> _pizzarepo;
+        public Dictionary<int, Pizza> _pizzarepo;
 
         // Properties
         public Dictionary<int, Pizza> Pizzarepo

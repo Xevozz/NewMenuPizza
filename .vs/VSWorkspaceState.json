@@ -3,8 +3,9 @@
     "",
     "\\.github",
     "\\.idea",
-    "\\NewMenuPizza"
+    "\\NewMenuPizza\\Kunder",
+    "\\NewMenuPizza\\Pages\\Shared"
   ],
-  "SelectedNode": "\\NewMenuPizza\\Program.cs",
+  "SelectedNode": "\\NewMenuPizza.sln",
   "PreviewInSolutionExplorer": false
 }
