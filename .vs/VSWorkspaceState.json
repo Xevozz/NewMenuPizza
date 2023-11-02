@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NewMenuPizza",
+    "\\NewMenuPizza\\Pages",
+    "\\NewMenuPizza\\Pages\\Menu",
+    "\\NewMenuPizza\\Pizza",
+    "\\NewMenuPizza\\Sandwiches"
   ],
+  "SelectedNode": "\\NewMenuPizza\\Sandwiches\\Sandwiches.cs",
   "PreviewInSolutionExplorer": false
 }
