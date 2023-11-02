@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NewMenuPizza",
+    "\\NewMenuPizza\\Kunder",
+    "\\NewMenuPizza\\Pages",
+    "\\NewMenuPizza\\Pages\\Pizza",
+    "\\NewMenuPizza\\Pages\\Shared",
+    "\\NewMenuPizza\\PizzaFolder",
+    "\\NewMenuPizza\\Properties",
+    "\\NewMenuPizza\\Sandwiches",
+    "\\NewMenuPizza\\Services"
   ],
+  "SelectedNode": "\\NewMenuPizza\\Kunder\\Kunde.cs",
   "PreviewInSolutionExplorer": false
 }
