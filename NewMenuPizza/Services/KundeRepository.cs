@@ -30,7 +30,7 @@ public class KundeRepository
             }
         }
 
-        private void PopulateKundeRepository()
+        public void PopulateKundeRepository()
         {
             _katalog.Clear();
 
@@ -47,7 +47,7 @@ public class KundeRepository
          
         public Kunde Tilføj(Kunde kunde)
         {
-            _katalog.Add(kunde.kundenummer, kunde);
+            _katalog.Add(kunde.KundeNummer, kunde);
 
             return kunde;
         }
@@ -92,7 +92,7 @@ public class KundeRepository
 
             foreach (Kunde k in _katalog.Values)
             {
-                if (k._Tlf == tlf)
+                if (k.Tlf == tlf)
                 {
                     return k;
                 }

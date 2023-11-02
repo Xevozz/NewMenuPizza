@@ -1,7 +1,13 @@
+using NewMenuPizza.Kunder;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+//indsætter kundeRepository
+builder.Services.AddSingleton<KundeRepository>(new KundeRepository(true));
+
 
 var app = builder.Build();
 
