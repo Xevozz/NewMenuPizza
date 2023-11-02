@@ -1,5 +1,3 @@
-
-
 namespace NewMenuPizza.DrikkevarerFolder
 {
     public class Drikkevarer
