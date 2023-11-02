@@ -1,5 +1,4 @@
-﻿using AspNetCore;
-using System.Collections.Specialized;
+﻿using System.Collections.Specialized;
 using System.Diagnostics.Eventing.Reader;
 using System.Security.Cryptography.X509Certificates;
 

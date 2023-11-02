@@ -1,5 +1,9 @@
 @page
-@model NewMenuPizza.Pages.Shared.Kunde
+@using NewMenuPizza.Kunder
+@using NewMenuPizza.Services
+
+@model NewMenuPizza.Pages.Kunder.Index 
+
 
 @{
     Layout = null;
@@ -22,7 +26,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(Kunde k in Model.Kunder)
+        @foreach(Kunde k in Model.kunders)
         {
             <tr>
                 <td>@k.KundeNummer</td>
