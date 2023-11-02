@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Mvc;
+using NewMenuPizza.Pages;
+
 namespace NewMenuPizza.Kunder;
 
 //instans
@@ -9,47 +12,47 @@ public class Kunde
 {
     //instantfelt
     private string _navn;
-    private string _adresse;
+    private int _kundenummer;
     private string _tlf;
-    
+
     //properties
 
-    public string _Navn
+    public string Navn
     {
         get { return _navn; }
-        set { _navn = value;  }
+        set { _navn = value; }
     }
-    
-    public string _Adresse
+
+    public int KundeNummer
     {
-        get { return _adresse; }
-        set { _adresse = value;  }
+        get { return _kundenummer; }
+        set { _kundenummer = value; }
     }
-    
-    public string _Tlf
+
+    public string Tlf
     {
         get { return _tlf; }
-        set { _tlf = value;  }
+        set { _tlf = value; }
     }
-    
+
     //konstruktør
 
     public Kunde()
     {
         _navn = "";
-        _adresse = "";
+        _kundenummer = 0;
         _tlf = "";
     }
 
-    public Kunde(string navn, string adresse, string tlf)
+    public Kunde(string navn, int kundenummer, string tlf)
     {
         _navn = navn;
-        _adresse = adresse;
+        _kundenummer = kundenummer;
         _tlf = tlf;
     }
 
-    public override string ToString()
+public override string ToString()
     {
-        return $"{nameof(_navn)}: {_navn}, {nameof(_adresse)}: {_adresse}, {nameof(_tlf)}: {_tlf}";
+        return $"{nameof(_navn)}: {_navn}, {nameof(_kundenummer)}: {_kundenummer}, {nameof(_tlf)}: {_tlf}";
     }
 }
