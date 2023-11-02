@@ -14,6 +14,27 @@
       <Compile Remove="Kunder\OpretKunde.cs" />
       <Compile Remove="Kunder\OpretKund.cs" />
       <Compile Remove="Kunder\KundeKatalog.cs" />
+      <Compile Remove="Pages\Pizza\**" />
+      <Compile Remove="PizzaFolder\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Pages\Pizza\**" />
+      <EmbeddedResource Remove="PizzaFolder\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Pages\Pizza\**" />
+      <Content Remove="PizzaFolder\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Pages\Pizza\**" />
+      <None Remove="PizzaFolder\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Pizza\Pizza.cshtml" />
     </ItemGroup>
 
 </Project>

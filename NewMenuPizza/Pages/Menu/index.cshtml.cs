@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NewMenuPizza.DrikkevarerFolder;
 using NewMenuPizza.Services;
-using NewMenuPizza.PizzaFolder;
+using NewMenuPizza.PizzaFolderTest;
 
 namespace NewMenuPizza.Pages.Menu;
 

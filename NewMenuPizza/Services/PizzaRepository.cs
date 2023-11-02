@@ -1,9 +1,6 @@
-﻿using AspNetCore;
-using System.Collections.Specialized;
-using System.Diagnostics.Eventing.Reader;
-using System.Security.Cryptography.X509Certificates;
+﻿using NewMenuPizza.PizzaFolderTest;
 
-namespace NewMenuPizza.Pizza
+namespace NewMenuPizza.Services
 {
     public class PizzaRepository
     {
