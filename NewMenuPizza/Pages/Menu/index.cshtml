@@ -1,5 +1,6 @@
 @page
 @using NewMenuPizza.DrikkevarerFolder
+@using NewMenuPizza.PizzaFolderTest
 @using NewMenuPizza.Services
 @model NewMenuPizza.Pages.Menu.index
 
@@ -16,8 +17,27 @@
 <body>
 <h1>Menukort</h1>
 <h2>Pizza</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nummer</th>
+                <th>Navn</th>
+                <th>Pris</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Pizza p in Model.Pizzas)
+            {
+            <tr>
+                <td>@p.Nummer</td>
+                <td>@p.Navn</td>
+                <td>@p.Pris Kroner</td>
+            </tr>
+            }
+        </tbody>
+    </table>
 <h2>Sandwich</h2>
-<h2>Drikkevarer</h2>
+<h2>Drikkevarer</h2
 <table class="table table-hover">
     <thead>
     <tr>

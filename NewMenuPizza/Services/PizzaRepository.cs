@@ -1,4 +1,5 @@
 ﻿using NewMenuPizza.PizzaFolderTest;
+using System.Diagnostics.Eventing.Reader;
 
 namespace NewMenuPizza.Services
 {
@@ -16,9 +17,15 @@ namespace NewMenuPizza.Services
         }
 
         // Default Constructor
-        public PizzaRepository()
+        public PizzaRepository(bool mockdata = false)
         {
             _pizzarepo = new Dictionary<int, Pizza>();
+            if (mockdata )
+            {
+                _pizzarepo.Clear();
+                _pizzazrepo.Add(SidsteNummer(), new Pizza("Hawaii," 85, SidsteNummer());
+                
+            }
         }
 
         public List<Pizza> HentAllePizza()
@@ -81,6 +88,21 @@ namespace NewMenuPizza.Services
                 throw new KeyNotFoundException("Pizzanummer findes ikke");
             }
         }
+
+        public int SidsteNummer()
+        {
+            if (!_pizzarepo.Any())
+            {
+                return 1; 
+            }
+            else
+            {
+                int sidstenummer = _pizzarepo.Keys.Max() + 1;
+                return sidstenummer;
+            }
+        }
+        
+
 
         
     }

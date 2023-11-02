@@ -4,13 +4,13 @@
     "\\NewMenuPizza",
     "\\NewMenuPizza\\Kunder",
     "\\NewMenuPizza\\Pages",
-    "\\NewMenuPizza\\Pages\\Pizza",
+    "\\NewMenuPizza\\Pages\\Menu",
     "\\NewMenuPizza\\Pages\\Shared",
-    "\\NewMenuPizza\\PizzaFolder",
+    "\\NewMenuPizza\\PizzaFolderTest",
     "\\NewMenuPizza\\Properties",
     "\\NewMenuPizza\\Sandwiches",
     "\\NewMenuPizza\\Services"
   ],
-  "SelectedNode": "\\NewMenuPizza\\Kunder\\Kunde.cs",
+  "SelectedNode": "\\NewMenuPizza\\Pages\\Menu\\index.cshtml",
   "PreviewInSolutionExplorer": false
 }
