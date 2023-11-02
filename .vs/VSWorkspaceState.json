@@ -11,6 +11,6 @@
     "\\NewMenuPizza\\Sandwiches",
     "\\NewMenuPizza\\Services"
   ],
-  "SelectedNode": "\\NewMenuPizza\\Pages\\Menu\\index.cshtml",
+  "SelectedNode": "\\NewMenuPizza\\Services\\PizzaRepository.cs",
   "PreviewInSolutionExplorer": false
 }
