@@ -9,7 +9,7 @@ public class Kunde
 {
     //instantfelt
     private string _navn;
-    private string _adresse;
+    private int _kundenummer;
     private string _tlf;
     
     //properties
@@ -20,10 +20,10 @@ public class Kunde
         set { _navn = value;  }
     }
     
-    public string _Adresse
+    private int _KundeNummer
     {
-        get { return _adresse; }
-        set { _adresse = value;  }
+        get { return _kundenummer; }
+        set { _kundenummer = value;  }
     }
     
     public string _Tlf
@@ -37,19 +37,19 @@ public class Kunde
     public Kunde()
     {
         _navn = "";
-        _adresse = "";
+        _kundenummer = 0;
         _tlf = "";
     }
 
-    public Kunde(string navn, string adresse, string tlf)
+    public Kunde(string navn, int kundenummer, string tlf)
     {
         _navn = navn;
-        _adresse = adresse;
+        _kundenummer = kundenummer;
         _tlf = tlf;
     }
 
     public override string ToString()
     {
-        return $"{nameof(_navn)}: {_navn}, {nameof(_adresse)}: {_adresse}, {nameof(_tlf)}: {_tlf}";
+        return $"{nameof(_navn)}: {_navn}, {nameof(_kundenummer)}: {_kundenummer}, {nameof(_tlf)}: {_tlf}";
     }
 }
