@@ -6,38 +6,39 @@
 
 
 @{
-    Layout = null;
-}
-
-@{
-    ViewData["Title"] = "kunde";
+    ViewData["Title"] = "Kunder";
 }
 
 <!DOCTYPE html>
 
 <h1 class="jumbotron">Vis Alle Kunder</h1>
-
+<html>
+<head>
+    <title>Kunder</title>
+</head>
+<body>
 <table class="table table-hover">
     <thead>
-        <tr>
-            <th>Kunde Nummer</th>
-            <th>Navn</th>
-            <th>Telefon</th>
-        </tr>
+    <tr>
+        <th>Kunde Nummer</th>
+        <th>Navn</th>
+        <th>Telefon</th>
+    </tr>
     </thead>
     <tbody>
-        @foreach(Kunde k in Model.kunders)
-        {
-            <tr>
-                <td>@k.KundeNummer</td>
-                <td>@k.Navn</td>
-                <td>@k.Tlf</td>
-            </tr>
-        }
+    @foreach (Kunde k in Model.kunders)
+    {
+        <tr>
+            <td>@k.KundeNummer</td>
+            <td>@k.Navn</td>
+            <td>@k.Tlf</td>
+        </tr>
+    }
     </tbody>
-    </table>
+</table>
+</body>
+<form method="post">
+    <input type="submit" value="Opret" class="btn btn-succes"/>
 
-    <form method="post">
-        <input type="submit" value="Opret" class="btn btn-succes"/>
-
-    </form>
+</form>
+</html>
