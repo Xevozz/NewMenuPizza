@@ -2,13 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\NewMenuPizza",
-    "\\NewMenuPizza\\Kunder",
     "\\NewMenuPizza\\Pages",
     "\\NewMenuPizza\\Pages\\Menu",
-    "\\NewMenuPizza\\Pages\\Shared",
-    "\\NewMenuPizza\\PizzaFolderTest",
-    "\\NewMenuPizza\\Properties",
-    "\\NewMenuPizza\\Sandwiches",
     "\\NewMenuPizza\\Services"
   ],
   "SelectedNode": "\\NewMenuPizza\\Pages\\Menu\\index.cshtml",

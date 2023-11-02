@@ -1,7 +1,8 @@
 @page
 @using NewMenuPizza.DrikkevarerFolder
 @using NewMenuPizza.PizzaFolderTest
-@model NewMenuPizza.Pages.Menu.Index
+@using NewMenuPizza.Services
+@model NewMenuPizza.Pages.Menu.index
 
 @{
     ViewData["Title"] = "Menu";
@@ -30,7 +31,7 @@
             <tr>
                 <td>@p.Nummer</td>
                 <td>@p.Navn</td>
-                <td>@p.Pris Kr.</td>
+                <td>@p.Pris Kroner</td>
             </tr>
             }
         </tbody>
