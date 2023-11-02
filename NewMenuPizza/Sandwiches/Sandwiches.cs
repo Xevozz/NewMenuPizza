@@ -26,14 +26,14 @@ public class Sandwiches
     }
 
 
-    public Sandwich()
+    public Sandwiches()
     {
         _name = "";
         _price = 0;
         _number = 0;
     }
 
-    public Sandwich(string navn, int pris, int nummer)
+    public Sandwiches(string navn, int pris, int nummer)
     {
         _name = navn;
         _price = pris;
@@ -46,7 +46,5 @@ public class Sandwiches
     {
         return $"{{{nameof(Pris)}={Pris.ToString()}}}";
     }
-
-}
 
 }
