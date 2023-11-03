@@ -37,9 +37,4 @@
       <_ContentIncludedByDefault Remove="Pages\Pizza\Pizza.cshtml" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Pages\Kontrolpanel\Pizza\" />
-      <Folder Include="Pages\Kontrolpanel\Sandwich\" />
-    </ItemGroup>
-
 </Project>
