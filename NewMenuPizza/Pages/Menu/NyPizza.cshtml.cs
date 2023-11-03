@@ -32,7 +32,6 @@ namespace NewMenuPizza.Pages.Menu
         {
             Pizza nyPizza = new Pizza(NyPizza, NyPris, NytNummer);
            
-            PizzaRepository pizzaRepository = new PizzaRepository(true);
             _pizzarepo.Tilføj(nyPizza);
         }
     }

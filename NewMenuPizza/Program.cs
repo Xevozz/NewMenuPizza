@@ -1,4 +1,5 @@
 using NewMenuPizza.Kunder;
+using NewMenuPizza.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,8 @@ builder.Services.AddRazorPages();
 
 //indsætter kundeRepository
 builder.Services.AddSingleton<KundeRepository>(new KundeRepository(true));
+
+builder.Services.AddSingleton<PizzaRepository>(new PizzaRepository(true));
 
 
 var app = builder.Build();
