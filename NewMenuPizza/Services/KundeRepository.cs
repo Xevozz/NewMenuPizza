@@ -1,3 +1,4 @@
+using NewMenuPizza.Model;
 namespace NewMenuPizza.Kunder;
 
 //Dictionary
@@ -90,6 +91,21 @@ public class KundeRepository
             foreach (Kunde k in _katalog.Values)
             {
                 if (k.Tlf == tlf)
+                {
+                    return k;
+                }
+            }
+
+            return resKunde;
+        }
+        
+        public Kunde HentKundeUdFraNummer(int kundenummer)
+        {
+            Kunde resKunde = null;
+
+            foreach (Kunde k in _katalog.Values)
+            {
+                if (k.KundeNummer == kundenummer)
                 {
                     return k;
                 }
