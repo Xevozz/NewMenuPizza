@@ -35,9 +35,27 @@ public class KundeRepository
         {
             _katalog.Clear();
 
-            _katalog.Add(1, new Kunde("Jens", GetSidsteNummer(), "11223344"));
-            _katalog.Add(2, new Kunde("Pete", GetSidsteNummer(), "11223344"));
-            _katalog.Add(3, new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
 
         }
         
