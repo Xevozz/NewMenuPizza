@@ -1,0 +1,25 @@
+@page
+@model NewMenuPizza.Pages.Kunder.NyKundeModel;
+@{
+}
+
+<h1>Opret en ny kunde</h1>
+
+<!--Opretter Kunde katotek mulighed- oprettelse af nye kunder og tilføjer til katalog -->
+<form method="post">
+    <div class="form-group>">
+        <label>Kunde nummer</label><br />
+        <input class="form-control" asp-for="@Model.NytKundeNavn" /><br />
+
+        <label>Kunde navn</label><br />
+        <input class="form-control" asp-for="@Model.NytKundeNavn" /><br />
+        <span asp-validation-for="@Model.NytKundeNavn" class="text-danger"></span><br/>
+
+
+        <label>Kunde telefon</label><br />
+        <input class="form-control" asp-for="@Model.NytKundetlf" /><br />
+
+
+        <input type="submit" value="Opret Ny Kunde" class="btn btn-success"/>
+    </div>
+</form>

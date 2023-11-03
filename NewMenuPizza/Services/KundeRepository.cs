@@ -1,3 +1,4 @@
+using NewMenuPizza.Model;
 namespace NewMenuPizza.Kunder;
 
 //Dictionary
@@ -30,13 +31,32 @@ public class KundeRepository
             }
         }
 
+        //KundeKatalog tilføjelse
         public void PopulateKundeRepository()
         {
             _katalog.Clear();
 
-            _katalog.Add(1, new Kunde("Jens", GetSidsteNummer(), "11223344"));
-            _katalog.Add(2, new Kunde("Pete", GetSidsteNummer(), "11223344"));
-            _katalog.Add(3, new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
+            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
 
         }
         
@@ -49,6 +69,7 @@ public class KundeRepository
             return kunde;
         }
 
+        //Sletning af kunde
         public Kunde Slet(int kundenummer)
         {
             if (_katalog.ContainsKey(kundenummer))
@@ -64,6 +85,7 @@ public class KundeRepository
             }
         }
 
+        //
         public Kunde HentKunde(int kundenummer)
         {
             if (_katalog.ContainsKey(kundenummer))
@@ -97,7 +119,23 @@ public class KundeRepository
 
             return resKunde;
         }
+        
+        public Kunde HentKundeUdFraNummer(int kundenummer)
+        {
+            Kunde resKunde = null;
 
+            foreach (Kunde k in _katalog.Values)
+            {
+                if (k.KundeNummer == kundenummer)
+                {
+                    return k;
+                }
+            }
+
+            return resKunde;
+        }
+
+        //tilføjer Kundenummer til kunde + 1. hver gang.
         public int GetSidsteNummer()
         {
             if (!_katalog.Any())
@@ -111,6 +149,7 @@ public class KundeRepository
             }
         }
 
+        
         public override string ToString()
         {
             String pænTekst = String.Join(", ", _katalog.Values);
