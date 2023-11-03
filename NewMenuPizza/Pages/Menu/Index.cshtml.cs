@@ -8,15 +8,30 @@ namespace NewMenuPizza.Pages.Menu;
 
 public class Index : PageModel
 {
-    public List<Drikkevarer> Drikkevarers { get; set; }
+    /*
+     * Instans felter
+     */
+    private DrikkevarerRepository _drikkvarerRepo;
     public List<Pizza> Pizzas { get; set; }
+    
+    /*
+     * Dependency Injection
+     */
+    public Index(DrikkevarerRepository repository)
+    {
+        _drikkvarerRepo = repository;
+    }
+    
+    /*
+     * Property list
+     */
+    public List<Drikkevarer> Drikkevarers { get; set; }
     
     public void OnGet()
     {
-        DrikkevarerRepository repo = new DrikkevarerRepository(true);
         PizzaRepository pizzarepo = new PizzaRepository(true);
 
-        Drikkevarers = repo.HentDrikkevarer();
+        Drikkevarers = _drikkvarerRepo.HentDrikkevarer();
         Pizzas = pizzarepo.HentAllePizza();
     }
 

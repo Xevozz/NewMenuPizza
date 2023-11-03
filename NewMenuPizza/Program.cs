@@ -11,6 +11,8 @@ builder.Services.AddSingleton<KundeRepository>(new KundeRepository(true));
 
 builder.Services.AddSingleton<PizzaRepository>(new PizzaRepository(true));
 
+builder.Services.AddSingleton<DrikkevarerRepository>(new DrikkevarerRepository(true));
+
 
 var app = builder.Build();
 
