@@ -1,0 +1,20 @@
+﻿@page
+@model NewMenuPizza.Pages.Menu.NyPizzaModel
+@{
+}
+
+<form method="post">
+    <div class="form-group>">
+        <label>Navn</label><br />
+        <input class="form-control" asp-for="@Model.NyPizza" /><br />
+
+        <label>Pris</label><br />
+        <input class="form-control" asp-for="@Model.NyPris" /><br />
+        
+        <label>Pizza Nummer</label><br />
+        <input class="form-control" asp-for="@Model.NytNummer" /><br />
+
+
+        <input type="submit" value="Opret Ny Kunde" class="btn btn-success"/>
+    </div>
+</form>
