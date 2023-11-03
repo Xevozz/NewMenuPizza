@@ -1,44 +1,36 @@
 @page
+@using NewMenuPizza.Model;
 @using NewMenuPizza.Kunder
-@using NewMenuPizza.Services
-
-@model NewMenuPizza.Pages.Kunder.Index 
-
-
+@model NewMenuPizza.Pages.Kunder.IndexModel
 @{
     ViewData["Title"] = "Kunder";
 }
 
-<!DOCTYPE html>
-
 <h1 class="jumbotron">Vis Alle Kunder</h1>
-<html>
-<head>
-    <title>Kunder</title>
-</head>
-<body>
+
+<form method="post">
+    Opret Ny kunde her --> <input type="submit" value="Opret" class="btn btn-primary" />
+
+</form>
+<p></p>
 <table class="table table-hover">
     <thead>
     <tr>
         <th>Kunde Nummer</th>
         <th>Navn</th>
         <th>Telefon</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
-    @foreach (Kunde k in Model.kunders)
+    @foreach(Kunde k in Model.Kunder)
     {
         <tr>
             <td>@k.KundeNummer</td>
             <td>@k.Navn</td>
             <td>@k.Tlf</td>
+            <td><a asp-page="EditKunde" asp-route-nummer="@k.KundeNummer">Ændre</a></td>
         </tr>
     }
     </tbody>
 </table>
-</body>
-<form method="post">
-    <input type="submit" value="Opret" class="btn btn-succes"/>
-
-</form>
-</html>

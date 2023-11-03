@@ -10,7 +10,7 @@ namespace NewMenuPizza.Pages.Kunder
     //opretter class til ny kunde razorpage
     public class NyKundeModel : PageModel
     {
-        private KundeRepository _repo;
+        public KundeRepository _repo;
 
         public NyKundeModel(KundeRepository repo)
         {
@@ -33,6 +33,7 @@ namespace NewMenuPizza.Pages.Kunder
 
         public void OnGet()
         {
+            
         }
 
         public IActionResult OnPost()

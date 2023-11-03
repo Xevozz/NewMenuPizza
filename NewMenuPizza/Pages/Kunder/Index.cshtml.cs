@@ -1,24 +1,41 @@
+using NewMenuPizza.Model;
+using NewMenuPizza.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NewMenuPizza.Kunder;
 
-namespace NewMenuPizza.Pages.Kunder;
-
-public class Index : PageModel
+namespace NewMenuPizza.Pages.Kunder
 {
-    // property til View'et
-    public List<Kunde> kunders { get;  set; }
-
-    public void OnGet()
+    public class IndexModel : PageModel
     {
-        KundeRepository repo = new KundeRepository(true);
-            
-        kunders = repo.HentAlleKunder();
+        // instans af kunde repository
+        public KundeRepository _repo;
 
-    }
+        // Dependency Injection
+        public IndexModel(KundeRepository repository)
+        {
+            _repo = repository;
+        }
 
-    public IActionResult OnPost()
-    {
-        return RedirectToPage("Kunde");
+
+
+
+
+        // property til View
+        public List<Kunde> Kunder { get;  set; }
+
+        public void OnGet()
+        {
+
+            KundeRepository repo = new KundeRepository(true);
+
+            Kunder = _repo.HentAlleKunder();
+
+        }
+
+        public IActionResult OnPost()
+        {
+            return RedirectToPage("NyKunde");
+        }
     }
 }
