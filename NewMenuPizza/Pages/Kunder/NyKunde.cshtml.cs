@@ -5,7 +5,7 @@ using NewMenuPizza.Kunder;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace NewMenuPizza.Kunder
+namespace NewMenuPizza.Pages.Kunder
 {
     //opretter class til ny kunde razorpage
     public class NyKundeModel : PageModel
