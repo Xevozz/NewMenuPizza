@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using NewMenuPizza.Kunder;
 
 namespace NewMenuPizza.Pages.Kontrolpanel;
@@ -20,4 +21,5 @@ public class Index : PageModel
     {
         return RedirectToPage("Kunde");
     }
+    
 }
