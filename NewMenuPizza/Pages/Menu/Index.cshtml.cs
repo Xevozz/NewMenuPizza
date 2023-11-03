@@ -22,6 +22,7 @@ public class Index : PageModel
 
     public IActionResult OnPost()
     {
-        return RedirectToPage("Drikkevarers");
+        return RedirectToPage("NyPizza");
+
     }
 }
