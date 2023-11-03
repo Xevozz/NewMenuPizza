@@ -17,7 +17,7 @@ namespace NewMenuPizza.Pages.Kunder
             _repo = repo;
         }
         
-        //Tilføjer ny kunde til _katalog.
+        //Tilføjer ny kunde til katalog.
         [BindProperty]
         public int NytKundeNummer { get; set; }
 
@@ -26,9 +26,7 @@ namespace NewMenuPizza.Pages.Kunder
         [Required(ErrorMessage = "Der skal være et navn")]
         [StringLength(10, MinimumLength = 2, ErrorMessage = "Der skal være mindst to tegn i et navn")]
         public string NytKundeNavn { get; set; }
-
-
-
+        
         [BindProperty]
         public string NytKundetlf { get; set; }
 

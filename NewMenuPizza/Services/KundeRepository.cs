@@ -31,6 +31,7 @@ public class KundeRepository
             }
         }
 
+        //KundeKatalog tilføjelse
         public void PopulateKundeRepository()
         {
             _katalog.Clear();
@@ -68,6 +69,7 @@ public class KundeRepository
             return kunde;
         }
 
+        //Sletning af kunde
         public Kunde Slet(int kundenummer)
         {
             if (_katalog.ContainsKey(kundenummer))
@@ -83,6 +85,7 @@ public class KundeRepository
             }
         }
 
+        //
         public Kunde HentKunde(int kundenummer)
         {
             if (_katalog.ContainsKey(kundenummer))
@@ -132,6 +135,7 @@ public class KundeRepository
             return resKunde;
         }
 
+        //tilføjer Kundenummer til kunde + 1. hver gang.
         public int GetSidsteNummer()
         {
             if (!_katalog.Any())
@@ -145,6 +149,7 @@ public class KundeRepository
             }
         }
 
+        
         public override string ToString()
         {
             String pænTekst = String.Join(", ", _katalog.Values);
