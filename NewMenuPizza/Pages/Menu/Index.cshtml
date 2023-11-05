@@ -15,8 +15,8 @@
     <title>Menu</title>
 </head>
 <body>
-<h1>Menukort</h1>
-<h2>Pizza</h2>
+    <h1>Menukort</h1>
+    <h2>Pizza</h2>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -28,28 +28,28 @@
         <tbody>
             @foreach (Pizza p in Model.Pizzas)
             {
-            <tr>
-                <td>@p.Nummer</td>
-                <td>@p.Navn</td>
-                <td>@p.Pris kr.</td>
-            </tr>
+                <tr>
+                    <td>@p.Nummer</td>
+                    <td>@p.Navn</td>
+                    <td>@p.Pris kr.</td>
+                </tr>
             }
         </tbody>
     </table>
 
-<h2>Drikkevarer</h2>
-<table class="table table-hover">
-    <tbody>
-    @foreach (Drikkevarer d in Model.Drikkevarers)
-    {
-        <tr>
-            <td>@d.Nummer</td>
-            <td>@d.Name</td>
-            <td>@d.Pris kr.</td>
-        </tr>
-    }
-    </tbody>
-     
-</table>
+    <h2>Drikkevarer</h2>
+    <table class="table table-hover">
+        <tbody>
+            @foreach (Drikkevarer d in Model.Drikkevarers)
+            {
+                <tr>
+                    <td>@d.Nummer</td>
+                    <td>@d.Name</td>
+                    <td>@d.Pris kr.</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
 </body>
 </html>

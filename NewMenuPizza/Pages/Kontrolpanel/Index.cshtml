@@ -43,8 +43,12 @@
     <div class="column">
         <h2>Funktioner</h2>
         <h3><i>Pizza</i></h3>
-        <button type="button" class="btn btn-outline-dark">Opret ny pizza</button><br/>
-        <button type="button" class="btn btn-outline-dark">Slet pizza</button><br />
+            <a asp-page="Pizza/NyPizza">
+                <button type="button" class="btn btn-outline-dark">Opret ny pizza</button>
+            </a>
+            <a asp-page="Pizza/SletPizza">
+                <button type="button" class="btn btn-outline-dark">Slet pizza</button>
+            </a>
         <button type="button" class="btn btn-outline-dark">Opdater pizza</button><br /><br/>
         <h3><i>Sandwich</i></h3>
         <button type="button" class="btn btn-outline-dark">Opret ny sandwich</button><br />

@@ -13,6 +13,8 @@ builder.Services.AddSingleton<PizzaRepository>(new PizzaRepository(true));
 
 builder.Services.AddSingleton<DrikkevarerRepository>(new DrikkevarerRepository(true));
 
+builder.Services.AddSingleton<IngrediensRepository>(new IngrediensRepository(true));
+
 
 var app = builder.Build();
 
