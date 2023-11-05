@@ -44,13 +44,13 @@ namespace NewMenuPizza.Pages.Kunder
         }
 
 
-        public IActionResult OnPost()
+        public IActionResult OnPostChange()
         {
-            if ( !ModelState.IsValid )
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
-
+            
             Kunde kunde = _repo.HentKunde(NytKundeNummer);
 
             kunde.Navn = NytKundeNavn;
@@ -58,5 +58,11 @@ namespace NewMenuPizza.Pages.Kunder
 
             return RedirectToPage("Index");
         }
+
+        public IActionResult OnPostCancel()
+        {
+            return RedirectToPage("Index");
+        }
+    
     }
 }

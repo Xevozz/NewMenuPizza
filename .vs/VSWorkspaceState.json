@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\NewMenuPizza",
-    "\\NewMenuPizza\\Pages",
-    "\\NewMenuPizza\\Pages\\Menu",
-    "\\NewMenuPizza\\Services"
+    ""
   ],
-  "SelectedNode": "\\NewMenuPizza\\Pages\\Menu\\index.cshtml",
+  "SelectedNode": "\\NewMenuPizza.sln",
   "PreviewInSolutionExplorer": false
 }
