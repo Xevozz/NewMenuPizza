@@ -66,12 +66,34 @@ namespace NewMenuPizza.Services
          }
         }
 
-        /*public Drikkevarer Opdater()
+        public Drikkevarer Opdater(int nummer, Drikkevarer opdateretDrikkevarer)
         {
-         
-        }*/
+         if (_drikkevarerRepo.ContainsKey(nummer))
+         {
+          _drikkevarerRepo[nummer].Name = opdateretDrikkevarer.Name;
+          _drikkevarerRepo[nummer].Pris = opdateretDrikkevarer.Pris;
 
-        public List<Drikkevarer> HentDrikkevarer()
+          return _drikkevarerRepo[nummer];
+         }
+         else
+         {
+          throw new KeyNotFoundException("Nummer findes ikke");
+         }
+        }
+
+        public Drikkevarer HentDrikkevarer(int nummer)
+        { 
+         if (_drikkevarerRepo.ContainsKey(nummer))
+         {
+          return _drikkevarerRepo[nummer];
+         }
+         else
+         {
+          throw new KeyNotFoundException("Nummer findes ikke");
+         }
+        }
+        
+        public List<Drikkevarer> HentAlleDrikkevarer()
         {
          return _drikkevarerRepo.Values.ToList();
         }

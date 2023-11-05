@@ -31,7 +31,7 @@ public class Index : PageModel
     {
         PizzaRepository pizzarepo = new PizzaRepository(true);
 
-        Drikkevarers = _drikkvarerRepo.HentDrikkevarer();
+        Drikkevarers = _drikkvarerRepo.HentAlleDrikkevarer();
         Pizzas = pizzarepo.HentAllePizza();
     }
 

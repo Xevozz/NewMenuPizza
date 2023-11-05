@@ -1,31 +1,28 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NewMenuPizza.Services;
-using NewMenuPizza.DrikkevarerFolder;
 
 namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
 {
-    public class NyDrikkevarer : PageModel
+    public class SletDrikkevarer : PageModel
     {
         /*
-         * Instans fields
+         * Instans field
          */
         private DrikkevarerRepository _drikkevarerRepo;
         
         /*
-         * property
+         * Property
          */
-        public NyDrikkevarer(DrikkevarerRepository repository)
+        public SletDrikkevarer(DrikkevarerRepository repository)
         {
             _drikkevarerRepo = repository;
         }
         
         [BindProperty]
-        public string NytDrikkevarerNavn { get; set; }
+        public int SletDrikkevarerNummer { get; set; }
         
-        [BindProperty]
-        public double NytDrikkevarerPris { get; set; }
-    
+        
         public void OnGet()
         {
             
@@ -38,9 +35,7 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
                 return Page();
             }
 
-            DrikkevarerFolder.Drikkevarer nyDrikkevarer = new DrikkevarerFolder.Drikkevarer(_drikkevarerRepo.GetSidsteNummer(),NytDrikkevarerNavn, NytDrikkevarerPris);
-
-            _drikkevarerRepo.Tilføj(nyDrikkevarer);
+            _drikkevarerRepo.Slet(SletDrikkevarerNummer);
 
             return RedirectToPage("../Index");
         }

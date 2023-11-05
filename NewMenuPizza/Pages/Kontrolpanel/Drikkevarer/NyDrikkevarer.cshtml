@@ -2,7 +2,7 @@
 @model NewMenuPizza.Pages.Kontrolpanel.Drikkevarer.NyDrikkevarer
 
 @{
-    Layout = null;
+    
 }
 
 <!DOCTYPE html>
@@ -12,8 +12,17 @@
     <title></title>
 </head>
 <body>
-<div>
-    
-</div>
+<h1>Opret ny drikkevarer</h1>
+<form method="post">
+    <div class="form-group>">
+        <label>Drikkevarer navn</label><br/>
+        <input class="form-control" asp-for="@Model.NytDrikkevarerNavn"/><br/>
+
+        <label>Drikkevarer pris</label><br/>
+        <input class="form-control" asp-for="@Model.NytDrikkevarerPris"/><br/>
+
+        <input type="submit" value="Ændre Drikkevarer" class="btn btn-success"/>
+    </div>
+</form>
 </body>
 </html>

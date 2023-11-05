@@ -1,0 +1,24 @@
+@page
+@model NewMenuPizza.Pages.Kontrolpanel.Drikkevarer.SletDrikkevarer
+
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h1>Slet drikkervarer fra menukort</h1>
+<form method="post">
+    <div class="form-group>">
+        <label>Drikkevarer Nummer</label><br/>
+        <input class="form-control" asp-for="@Model.SletDrikkevarerNummer"/><br/>
+
+        <input type="submit" value="Slet drikkevarer" class="btn btn-danger"/>
+    </div>
+</form>
+</body>
+</html>
