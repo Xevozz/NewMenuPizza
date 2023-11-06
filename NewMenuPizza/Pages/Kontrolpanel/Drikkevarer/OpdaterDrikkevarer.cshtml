@@ -1,0 +1,41 @@
+@page
+@model NewMenuPizza.Pages.Kontrolpanel.Drikkevarer.OpdaterDrikkevarer
+
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Ændre Drikkevarer</title>
+</head>
+<body>
+<h1>Ændre drikkevarer</h1>
+<form method="post" asp-page-handler="LoadDrikkevare">
+    <div class="form-group">
+        <label for="drikkevareNummer">Drikkevarer nummer</label>
+        <input type="text" id="drikkevareNummer" class="form-control" asp-for="ÆndreDrikkevarerNummer"/>
+        <input type="submit" value="Hent drikkevare" class="btn btn-primary"/>
+    </div>
+</form>
+
+@if (Model.NummerDeaktiveret)
+{
+    <form method="post" asp-page-handler="ChangeDrikkevare">
+        <div class="form-group">
+            
+            <input type="hidden" asp-for="ÆndreDrikkevarerNummer" />
+            
+            <label for="drikkevareNavn">Drikkevarer navn</label>
+            <input type="text" id="drikkevareNavn" class="form-control" asp-for="ÆndreDrikkevarerNavn"/>
+
+            <label for="drikkevarePris">Drikkevarer pris</label>
+            <input type="text" id="drikkevarePris" class="form-control" asp-for="ÆndreDrikkevarerPris"/>
+
+            <input type="submit" value="Opdater Drikkevare" class="btn btn-success"/>
+        </div>
+    </form>
+}
+</body>
+</html>
