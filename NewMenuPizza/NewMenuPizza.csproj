@@ -38,10 +38,22 @@
       <_ContentIncludedByDefault Remove="Pages\Sandwiches\Index.cshtml" />
       <_ContentIncludedByDefault Remove="Pages\Kontrolpanel\Sandwich\Index.cshtml" />
       <_ContentIncludedByDefault Remove="Pages\Sandwich\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Kunder\EditKunde.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Kunder\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Kunder\NyKunde.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Kontrolpanel\Kunder\EditKunde.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Kontrolpanel\Kunder\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Kontrolpanel\Kunder\NyKunde.cshtml" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Model\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Pages\Kunder\EditKunde.cshtml" />
+      <AdditionalFiles Include="Pages\Kunder\Index.cshtml" />
+      <AdditionalFiles Include="Pages\Kunder\NyKunde.cshtml" />
     </ItemGroup>
 
 </Project>
