@@ -1,107 +1,114 @@
 ﻿using NewMenuPizza.SandwichFolder;
-using System.Diagnostics.Eventing.Reader;
 
 namespace NewMenuPizza.Services
 {
-    public class Sandwichrepository
+    public class SandwichRepository
     {
-        // instans felter
+        /*
+         * Instance field
+         */
+        
+        private Dictionary<int, Sandwich> _sandwichRepo;
 
-        public Dictionary<int, Sandwich> _sandwichrepo;
+        /*
+         * Properties
+         */
 
-        // Properties
-        public Dictionary<int, Sandwich> Sandwichrepo
+        public Dictionary<int, Sandwich> SandwichRepo
         {
-            get { return _sandwichrepo; }
-            set { _sandwichrepo = value; }
+         get { return _sandwichRepo; }
+         set { _sandwichRepo = value; }
         }
 
-        // Default Constructor
-        public Sandwichrepository(bool mockdata = false)
-        {
-            _sandwichrepo = new Dictionary<int, Sandwich>();
-            if (mockdata)
-            {
-                _sandwichrepo.Clear();
-                _sandwichrepo.Add(SidsteNummer(), new Sandwich("Kylling/bacon", 85, SidsteNummer()));
-                _sandwichrepo.Add(SidsteNummer(), new Sandwich("Okesød", 85, SidsteNummer()));
+        /*
+         * Constructor
+         */
 
-            }
+        public SandwichRepository(bool mockData = false)
+        {
+         _sandwichRepo = new Dictionary<int, Sandwich>();
+
+         if (mockData)
+         {
+          _sandwichRepo.Clear();
+          
+          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Kylling", 0, GetSidsteNummer()));
+          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Bacon", 0, GetSidsteNummer()));
+          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Oksekød>", 0, GetSidsteNummer()));
+          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Haj", 0, GetSidsteNummer()));
+         }
+        }
+        
+        /*
+         * Methods
+         */
+        
+        
+
+        public Sandwich Tilføj(Sandwich drikkevarer)
+        {
+          _sandwichRepo.Add(drikkevarer.Nummer, drikkevarer);
+
+          return drikkevarer;
         }
 
-        public List<Sandwich> HentAlleSandwich()
+        public Sandwich Slet(int nummer)
         {
-            return _sandwichrepo.Values.ToList();
+         if (_sandwichRepo.ContainsKey(nummer))
+         {
+          Sandwich slettetDrikkevarer = _sandwichRepo[nummer];
+          _sandwichRepo.Remove(nummer);
+          return slettetDrikkevarer;
+         }
+         else
+         {
+          throw new KeyNotFoundException("Nummer findes ikke");
+         }
         }
 
-
-        // Metoder
-
-        // Tilføj Pizzanummer
-
-        public void Tilføj(Sandwich sandwich)
+        public Sandwich Opdater(int nummer, Sandwich opdateretDrikkevarer)
         {
-            _sandwichrepo.Add(Sandwich.Sandwichnummer, sandwich);
+         if (_sandwichRepo.ContainsKey(nummer))
+         {
+          _sandwichRepo[nummer].Navn = opdateretDrikkevarer.Navn;
+          _sandwichRepo[nummer].Pris = opdateretDrikkevarer.Pris;
+
+          return _sandwichRepo[nummer];
+         }
+         else
+         {
+          throw new KeyNotFoundException("Nummer findes ikke");
+         }
         }
 
-
-        // Fjern Pizzanummer
-        public Sandwich Fjern(int nummer)
+        public Sandwich HentDrikkevarer(int nummer)
+        { 
+         if (_sandwichRepo.ContainsKey(nummer))
+         {
+          return _sandwichRepo[nummer];
+         }
+         else
+         {
+          throw new KeyNotFoundException("Nummer findes ikke");
+         }
+        }
+        
+        public List<Sandwich> HentAlleDrikkevarer()
         {
-            Sandwich ingenSandwichich = new Sandwich();
-            if (_sandwichrepo.ContainsKey(nummer))
-            {
-                _sandwichrepo.Remove(nummer);
-
-                return ingenSandwichich;
-
-            }
-            else
-            {
-                throw new Exception("Pizzanummer findes ikke");
-            }
+         return _sandwichRepo.Values.ToList();
         }
 
-        // Hent pizzanummer
-
-        public Sandwich HentSandNummer(int nummer)
+        public int GetSidsteNummer()
         {
-            if (_sandwichrepo.ContainsKey(nummer))
-            {
-                return _sandwichrepo[nummer];
-            }
-            else
-            {
-                throw new KeyNotFoundException("Pizzanummer findes ikke");
-            }
-        }
-
-        // Opdater Pizzanummer
-
-        public void OpdaterSandwichNummer(int nummer, Sandwich opdateretSandwich)
-        {
-            if (_sandwichrepo.ContainsKey(nummer))
-            {
-                Sandwich eksisterendeSandwich = _sandwichrepo[nummer];
-            }
-            else
-            {
-                throw new KeyNotFoundException("Sandwichnummer findes ikke");
-            }
-        }
-
-        public int SidsteNummer()
-        {
-            if (!_sandwichrepo.Any())
-            {
-                return 1;
-            }
-            else
-            {
-                int sidstenummer = _sandwichrepo.Keys.Max() + 1;
-                return sidstenummer;
-            }
+         if (!_sandwichRepo.Any())
+         {
+          return 1;
+         }
+         else
+         {
+          int sidsteNummer = _sandwichRepo.Keys.Max();
+          return sidsteNummer + 1;
+         }
         }
     }
 }
-
