@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using NewMenuPizza.Model;
 using NewMenuPizza.Services;
 using NewMenuPizza.Kunder;
 using Microsoft.AspNetCore.Mvc;

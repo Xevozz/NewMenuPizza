@@ -1,4 +1,3 @@
-using NewMenuPizza.Model;
 using NewMenuPizza.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

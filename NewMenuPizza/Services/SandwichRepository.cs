@@ -34,7 +34,7 @@ namespace NewMenuPizza.Services
           
           _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Kylling", 55, GetSidsteNummer()));
           _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Bacon", 55, GetSidsteNummer()));
-          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Oksekød>", 55, GetSidsteNummer()));
+          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Oksekød", 55, GetSidsteNummer()));
           _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Haj", 55, GetSidsteNummer()));
          }
         }
