@@ -35,6 +35,9 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Pages\Pizza\Pizza.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Sandwiches\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Kontrolpanel\Sandwich\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Sandwich\Index.cshtml" />
     </ItemGroup>
 
 </Project>
