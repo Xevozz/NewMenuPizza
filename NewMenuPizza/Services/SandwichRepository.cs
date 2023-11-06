@@ -39,21 +39,21 @@ namespace NewMenuPizza.Services
 
         // Tilføj Pizzanummer
 
-        public void Tilføj(Sandwich pizza)
+        public void Tilføj(Sandwich sandwich)
         {
-            _sandwichrepo.Add(pizza.Nummer, pizza);
+            _sandwichrepo.Add(Sandwich.Sandwichnummer, sandwich);
         }
 
 
         // Fjern Pizzanummer
         public Sandwich Fjern(int nummer)
         {
-            Sandwich IngenPizza = new Sandwich();
+            Sandwich ingenSandwichich = new Sandwich();
             if (_sandwichrepo.ContainsKey(nummer))
             {
                 _sandwichrepo.Remove(nummer);
 
-                return IngenPizza;
+                return ingenSandwichich;
 
             }
             else
@@ -64,7 +64,7 @@ namespace NewMenuPizza.Services
 
         // Hent pizzanummer
 
-        public Sandwich HentPizzaNummer(int nummer)
+        public Sandwich HentSandNummer(int nummer)
         {
             if (_sandwichrepo.ContainsKey(nummer))
             {
@@ -78,15 +78,15 @@ namespace NewMenuPizza.Services
 
         // Opdater Pizzanummer
 
-        public void OpdaterPizzaNummer(int nummer, Sandwich opdateretPizza)
+        public void OpdaterSandwichNummer(int nummer, Sandwich opdateretSandwich)
         {
             if (_sandwichrepo.ContainsKey(nummer))
             {
-                Sandwich eksisterendePizza = _sandwichrepo[nummer];
+                Sandwich eksisterendeSandwich = _sandwichrepo[nummer];
             }
             else
             {
-                throw new KeyNotFoundException("Pizzanummer findes ikke");
+                throw new KeyNotFoundException("Sandwichnummer findes ikke");
             }
         }
 
