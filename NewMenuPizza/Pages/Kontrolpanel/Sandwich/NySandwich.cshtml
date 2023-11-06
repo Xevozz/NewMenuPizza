@@ -1,19 +1,20 @@
 @page
-@model NewMenuPizza.Pages.Sandwiches.NySandwich
-
+@model NewMenuPizza.Pages.Menu.NySandwichModel
 @{
-    Layout = null;
 }
 
-<!DOCTYPE html>
+<form method="post">
+    <div class="form-group>">
+        <label>Navn</label><br />
+        <input class="form-control" asp-for="@Model.NySandwich" /><br />
 
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
-</div>
-</body>
-</html>
+        <label>Pris</label><br />
+        <input class="form-control" asp-for="@Model.NyPris" /><br />
+        
+        <label>Pizza Nummer</label><br />
+        <input class="form-control" asp-for="@Model.NytNummer" /><br />
+
+
+        <input type="submit" value="Opret Ny Pizza" class="btn btn-success"/>
+    </div>
+</form>
