@@ -52,7 +52,7 @@ namespace NewMenuPizza.Services
           return drikkevarer;
         }
 
-        public Sandwich Slet(int nummer)
+        public Sandwich fjern(int nummer)
         {
          if (_sandwichRepo.ContainsKey(nummer))
          {
@@ -66,12 +66,12 @@ namespace NewMenuPizza.Services
          }
         }
 
-        public Sandwich Opdater(int nummer, Sandwich opdateretDrikkevarer)
+        public Sandwich update(int nummer, Sandwich opdateretSandwich)
         {
          if (_sandwichRepo.ContainsKey(nummer))
          {
-          _sandwichRepo[nummer].Navn = opdateretDrikkevarer.Navn;
-          _sandwichRepo[nummer].Pris = opdateretDrikkevarer.Pris;
+          _sandwichRepo[nummer].Navn = opdateretSandwich.Navn;
+          _sandwichRepo[nummer].Pris = opdateretSandwich.Pris;
 
           return _sandwichRepo[nummer];
          }
@@ -81,7 +81,7 @@ namespace NewMenuPizza.Services
          }
         }
 
-        public Sandwich HentDrikkevarer(int nummer)
+        public Sandwich HentSandwich(int nummer)
         { 
          if (_sandwichRepo.ContainsKey(nummer))
          {
@@ -93,7 +93,7 @@ namespace NewMenuPizza.Services
          }
         }
         
-        public List<Sandwich> HentAlleDrikkevarer()
+        public List<Sandwich> HentAlleSandwiches()
         {
          return _sandwichRepo.Values.ToList();
         }

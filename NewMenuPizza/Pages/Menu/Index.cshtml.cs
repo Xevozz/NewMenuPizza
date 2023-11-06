@@ -14,12 +14,12 @@ public class Index : PageModel
      */
     private DrikkevarerRepository _drikkvarerRepo;
     private IngrediensRepository _ingrediensrepo;
-    private Sandwichrepository _sandwichrepo;
+    private SandwichRepository _sandwichrepo;
 
     /*
      * Dependency Injection
      */
-    public Index(DrikkevarerRepository drikkevarerRepo, IngrediensRepository ingrediensRepo, Sandwichrepository sandwichrepo)
+    public Index(DrikkevarerRepository drikkevarerRepo, IngrediensRepository ingrediensRepo, SandwichRepository sandwichrepo)
     {
         _drikkvarerRepo = drikkevarerRepo;
         _ingrediensrepo = ingrediensRepo;
@@ -40,7 +40,7 @@ public class Index : PageModel
         Drikkevarers = _drikkvarerRepo.HentAlleDrikkevarer();
         Pizzas = pizzarepo.HentAllePizza();
         IngrediensList = _ingrediensrepo.HentAlleIngredienser();
-        Sandwiches = _sandwichrepo.HentAlleSandwich();
+        Sandwiches = _sandwichrepo.HentAlleSandwiches();
     }
 
     public IActionResult OnPost()
