@@ -32,10 +32,10 @@ namespace NewMenuPizza.Services
          {
           _sandwichRepo.Clear();
           
-          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Kylling", 0, GetSidsteNummer()));
-          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Bacon", 0, GetSidsteNummer()));
-          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Oksekød>", 0, GetSidsteNummer()));
-          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Haj", 0, GetSidsteNummer()));
+          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Kylling", 55, GetSidsteNummer()));
+          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Bacon", 55, GetSidsteNummer()));
+          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Oksekød>", 55, GetSidsteNummer()));
+          _sandwichRepo.Add(GetSidsteNummer(), new Sandwich("Haj", 55, GetSidsteNummer()));
          }
         }
         
