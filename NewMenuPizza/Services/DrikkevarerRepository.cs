@@ -75,6 +75,7 @@ namespace NewMenuPizza.Services
          if (_drikkevarerRepo.ContainsKey(nummer))
          {
           _drikkevarerRepo[nummer] = opdateretDrikkevarer;
+          WriteToJson();
          }
          else
          {
