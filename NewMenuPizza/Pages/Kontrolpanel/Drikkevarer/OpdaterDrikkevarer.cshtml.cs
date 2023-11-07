@@ -69,7 +69,7 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
                     new DrikkevarerFolder.Drikkevarer(ÆndreDrikkevarerNummer, ÆndreDrikkevarerNavn,
                         ÆndreDrikkevarerPris));
 
-                return RedirectToPage("../Index");
+                return RedirectToPage("../../Menu/Index");
             }
             catch(KeyNotFoundException)
             {
