@@ -1,10 +1,9 @@
-using NewMenuPizza.Model;
 using NewMenuPizza.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NewMenuPizza.Kunder;
 
-namespace NewMenuPizza.Pages.Kunder
+namespace NewMenuPizza.Pages.Kontrolpanel.Kunder
 {
     public class IndexModel : PageModel
     {

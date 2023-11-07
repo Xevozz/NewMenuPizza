@@ -1,4 +1,4 @@
-using NewMenuPizza.Model;
+using System.Text.Json;
 namespace NewMenuPizza.Kunder;
 
 //Dictionary
@@ -22,7 +22,8 @@ public class KundeRepository
         //Constructor
         public KundeRepository(bool mockData = false)
         {
-            _katalog = new Dictionary<int, Kunde>();
+            _katalog = ReadFromJson();
+            /*_katalog = new Dictionary<int, Kunde>();
 
 
             if (mockData )
@@ -36,28 +37,8 @@ public class KundeRepository
         {
             _katalog.Clear();
 
-            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Jens", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Pete", GetSidsteNummer(), "11223344"));
-            _katalog.Add(GetSidsteNummer(), new Kunde("Emil", GetSidsteNummer(), "11223344"));
-
+            
+*/
         }
         
          //metoder
@@ -65,7 +46,8 @@ public class KundeRepository
         public Kunde Tilføj(Kunde kunde)
         {
             _katalog.Add(kunde.KundeNummer, kunde);
-
+            
+            WriteToJson();
             return kunde;
         }
 
@@ -76,6 +58,7 @@ public class KundeRepository
             {
                 Kunde slettetKunde = _katalog[kundenummer];
                 _katalog.Remove(kundenummer);
+                WriteToJson();
                 return slettetKunde;
 
             }
@@ -156,6 +139,34 @@ public class KundeRepository
 
             return $"{{{nameof(Katalog)}={pænTekst}}}";
         }
+        /*
+         * Hjælpe metoder til at læse og skrive til en fil i json format
+         */
 
-
-}
+        private const string FILENAME = "KundeRepository.json";
+  
+        private Dictionary<int, Kunde> ReadFromJson()
+        {
+            if ( File.Exists(FILENAME) )
+            {
+                StreamReader reader = File.OpenText(FILENAME);
+                Dictionary<int, Kunde> katalog = JsonSerializer.Deserialize<Dictionary<int, Kunde>>(reader.ReadToEnd());
+                reader.Close();
+                return katalog;
+            }
+            else
+            {
+                return new Dictionary<int, Kunde>();
+            }
+    
+        }
+  
+        private void WriteToJson()
+        {
+            FileStream fs = new FileStream(FILENAME, FileMode.Create);
+            Utf8JsonWriter writer = new Utf8JsonWriter(fs);
+            JsonSerializer.Serialize(writer, _katalog);
+            fs.Close();
+        }
+    
+} 

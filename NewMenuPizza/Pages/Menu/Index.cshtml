@@ -2,20 +2,14 @@
 @using NewMenuPizza.DrikkevarerFolder
 @using NewMenuPizza.PizzaFolderTest
 @using NewMenuPizza.Services
+@using NewMenuPizza.SandwichFolder
 @model NewMenuPizza.Pages.Menu.Index
 
 @{
     ViewData["Title"] = "Menu";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>Menu</title>
-</head>
-<body>
-    <h1>Menukort</h1>
+<h1>Menukort</h1>
     <h2>Pizza</h2>
     <table class="table table-hover">
         <thead>
@@ -41,18 +35,29 @@
     </table>
 
     <h2>Drikkevarer</h2>
+<table class="table table-hover">
+<tbody>
+@foreach (Drikkevarer d in Model.Drikkevarers)
+{
+    <tr>
+        <td>@d.Nummer</td>
+        <td>@d.Name</td>
+        <td>@d.Pris kr.</td>
+    </tr>
+}
+</tbody>
+</table>
+
+        <h2>Sandwiches</h2>
     <table class="table table-hover">
         <tbody>
-            @foreach (Drikkevarer d in Model.Drikkevarers)
-            {
-                <tr>
-                    <td>@d.Nummer</td>
-                    <td>@d.Name</td>
-                    <td>@d.Pris kr.</td>
-                </tr>
-            }
+        @foreach (Sandwich d in Model.Sandwiches)
+        {
+            <tr>
+                <td>@d.Nummer</td>
+                <td>@d.Navn</td>
+                <td>@d.Pris kr.</td>
+            </tr>
+        }
         </tbody>
-
     </table>
-</body>
-</html>

@@ -66,14 +66,11 @@ namespace NewMenuPizza.Services
          }
         }
 
-        public Drikkevarer Opdater(int nummer, Drikkevarer opdateretDrikkevarer)
+        public void Opdater(int nummer, Drikkevarer opdateretDrikkevarer)
         {
          if (_drikkevarerRepo.ContainsKey(nummer))
          {
-          _drikkevarerRepo[nummer].Name = opdateretDrikkevarer.Name;
-          _drikkevarerRepo[nummer].Pris = opdateretDrikkevarer.Pris;
-
-          return _drikkevarerRepo[nummer];
+          _drikkevarerRepo[nummer] = opdateretDrikkevarer;
          }
          else
          {
