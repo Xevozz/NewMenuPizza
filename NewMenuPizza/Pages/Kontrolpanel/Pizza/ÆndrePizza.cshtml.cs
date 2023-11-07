@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using NewMenuPizza.Services;
 using NewMenuPizza.PizzaFolderTest;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
 {
@@ -16,32 +17,53 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
         }
 
         [BindProperty]
-        [Required(ErrorMessage = "Pizzanavn mangler")]
-        [StringLength(20, MinimumLength = 5, ErrorMessage = "Der skal være min. 5 tegn")]
-        public string NyPizzaNavn { get; set; }
+        public string ÆndrePizzaNavn { get; set; }
+
 
         [BindProperty]
-        [Required(ErrorMessage = "Pris mangler")]
-        public int NyPris { get; set; }
+        public int ÆndrePizzaPris { get; set; }
 
         [BindProperty]
-        public int NytNummer { get; set; }
+        public int ÆndrePizzaNummer { get; set; }
+
+        [BindProperty]
+        public bool NummerDeaktiveret {  get; set; }
 
 
-        public void OnGet(int nummer)
+        public void OnGet()
         {
-
-            PizzaFolderTest.Pizza pizza = _pizzarepo.HentPizzaNummer(nummer);
-
-            
-            NyPizzaNavn = pizza.Navn;
-            NyPris = pizza.Pris;
-            NytNummer = pizza.Nummer;
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPostLoadPizzaer()
         {
+            try
+            {
+                var pizza = _pizzarepo.HentPizzaNummer(ÆndrePizzaNummer);
+                ÆndrePizzaNavn = pizza.Navn;
+                ÆndrePizzaPris = pizza.Pris;
+                NummerDeaktiveret = true;
+            }
+            catch (KeyNotFoundException)
+            {
+                NummerDeaktiveret = false;
+            }
             return Page();
         }
+
+        public IActionResult OnPostChangePizzaer()
+        {
+            try
+            {
+                _pizzarepo.OpdaterPizzaNummer(ÆndrePizzaNummer,
+                    new PizzaFolderTest.Pizza(ÆndrePizzaNavn, ÆndrePizzaNummer, ÆndrePizzaPris));
+
+                return RedirectToPage("/Menu/Index");
+            }
+            catch (KeyNotFoundException)
+            {
+                return Page();
+            }
+        }
+
     }
 }

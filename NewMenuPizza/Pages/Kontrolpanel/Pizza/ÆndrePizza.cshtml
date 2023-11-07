@@ -3,25 +3,40 @@
 @{
 }
 
-<h1> Ændre Pizza</h1>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <title>Ændre Pizza</title>
+</head>
+<body>
+    <h1>Ændre Pizza</h1>
+    <form method="post" asp-page-handler="LoadPizzaer">
 
-<form method="post">
-    <div class="form-group>">
-        <label>Navn</label><br />
-        <span asp-validation-for="@Model.NyPizzaNavn" class="text-danger"></span><br />
-        <input class="form-control" asp-for="@Model.NyPizzaNavn" /><br />
+        <div class="form-group">
+            <label for="PizzaNummer">Pizza Nummer</label>
+            <input type="text" id="PizzaNavn" class="form-control" asp-for="ÆndrePizzaNavn" />
+            <input type="submit" value="Hent Pizza" class="btn btn-primary" />
+        </div>
+    </form>
 
-        <label>Pris</label><br />
-        <input class="form-control" asp-for="@Model.NyPris" /><br />
-        <span asp-validation-for="@Model.NyPris" class="text-danger"></span><br />
+    @if (Model.NummerDeaktiveret)
+    {
+        <form method="post" asp-page-handler="ChangePizzaer">
+            <div class="form-group">
 
-        <label>Pizza Nummer</label><br />
-        <input class="form-control" asp-for="@Model.NytNummer" /><br />
+                <input type="hidden" asp-for="ÆndrePizzaNummer" />
 
+                <label for="PizzaNavn">Pizza navn</label>
+                <input type="text" id="PizzaNavn" class="form-control" asp-for="ÆndrePizzaNavn" />
 
-        <input type="submit" value="Ændre Pizza" class="btn btn-success" />
-    </div>
-</form>
+                <label for="PizzaPris">Pizza pris</label>
+                <input type="text" id="PizzaPris" class="form-control" asp-for="ÆndrePizzaPris" />
 
-
+                <input type="submit" value="Opdater Pizza" class="btn btn-primary" />
+            </div>
+        </form>
+    }
+</body>
+</html>
+    
