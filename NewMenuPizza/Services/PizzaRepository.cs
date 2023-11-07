@@ -12,20 +12,21 @@ namespace NewMenuPizza.Services
         // Properties
         public Dictionary<int, Pizza> Pizzarepo
         {
-          get { return _pizzarepo; }
-          set { _pizzarepo = value; }
+            get { return _pizzarepo; }
+            set { _pizzarepo = value; }
         }
 
         // Default Constructor
         public PizzaRepository(bool mockdata = false)
         {
             _pizzarepo = new Dictionary<int, Pizza>();
-            if (mockdata )
+            if (mockdata)
             {
                 _pizzarepo.Clear();
                 _pizzarepo.Add(SidsteNummer(), new Pizza("Hawaii", 85, SidsteNummer()));
                 _pizzarepo.Add(SidsteNummer(), new Pizza("Pepperoni", 85, SidsteNummer()));
-                
+                _pizzarepo.Add(SidsteNummer(), new Pizza("Napoli", 75, SidsteNummer()));
+
             }
         }
 
@@ -46,15 +47,11 @@ namespace NewMenuPizza.Services
 
 
         // Fjern Pizzanummer
-        public Pizza Fjern(int nummer)
+        public void Fjern(int nummer)
         {
-            Pizza IngenPizza = new Pizza();
             if (_pizzarepo.ContainsKey(nummer))
             {
                 _pizzarepo.Remove(nummer);
-
-                return IngenPizza;
-                
             }
             else
             {
@@ -63,7 +60,7 @@ namespace NewMenuPizza.Services
         }
 
         // Hent pizzanummer
-        
+
         public Pizza HentPizzaNummer(int nummer)
         {
             if (_pizzarepo.ContainsKey(nummer))
@@ -94,7 +91,7 @@ namespace NewMenuPizza.Services
         {
             if (!_pizzarepo.Any())
             {
-                return 1; 
+                return 1;
             }
             else
             {
@@ -102,9 +99,6 @@ namespace NewMenuPizza.Services
                 return sidstenummer;
             }
         }
-        
 
-
-        
     }
 }

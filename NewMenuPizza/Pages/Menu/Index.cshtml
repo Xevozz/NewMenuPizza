@@ -17,6 +17,7 @@
                 <th>Nummer</th>
                 <th>Navn</th>
                 <th>Pris</th>
+             
             </tr>
         </thead>
         <tbody>
@@ -26,9 +27,11 @@
                     <td>@p.Nummer</td>
                     <td>@p.Navn</td>
                     <td>@p.Pris kr.</td>
+                    <td><a asp-page="ÆndrePizza" asp-route-nummer="@p.Nummer">Opdater</a></td>
                 </tr>
             }
         </tbody>
+       
     </table>
 
     <h2>Drikkevarer</h2>

@@ -1,7 +1,10 @@
 ﻿@page
-@model NewMenuPizza.Pages.Menu.NyPizzaModel
+@model NewMenuPizza.Pages.Kontrolpanel.Pizza.ÆndrePizzaModel
 @{
 }
+
+<h1> Ændre Pizza</h1>
+
 
 <form method="post">
     <div class="form-group>">
@@ -10,14 +13,14 @@
         <input class="form-control" asp-for="@Model.NyPizzaNavn" /><br />
 
         <label>Pris</label><br />
-        <input class="form-control" asp-for="@Model.NyPris" /><br/>
+        <input class="form-control" asp-for="@Model.NyPris" /><br />
         <span asp-validation-for="@Model.NyPris" class="text-danger"></span><br />
 
         <label>Pizza Nummer</label><br />
         <input class="form-control" asp-for="@Model.NytNummer" /><br />
 
 
-        <input type="submit" value="Opret Ny Pizza" class="btn btn-success"/>
+        <input type="submit" value="Ændre Pizza" class="btn btn-success" />
     </div>
 </form>
 
