@@ -2,11 +2,13 @@ namespace NewMenuPizza.SandwichFolder;
 
 public class Sandwich
 {
+
+    //instans felter
     private string _navn;
     private double _pris;
     private int _nummer;
 
-
+    //propperties
     public string Navn
     {
         get { return _navn; }
@@ -25,6 +27,7 @@ public class Sandwich
         set { _nummer = value; }
     }
 
+    //default constructer
     public Sandwich()
     {
         _navn = "";

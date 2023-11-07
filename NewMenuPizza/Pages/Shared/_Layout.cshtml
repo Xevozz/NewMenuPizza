@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/NewMenuPizza.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     
 </head>
 <body>
@@ -26,14 +27,18 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-page="/Menu/Index">Menu</a>
                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link text-dark" asp-area="" asp-page="/Kunder/Index">Kunder</a>
-                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-page="/Kontrolpanel/Login">Kontrolpanel</a>
                     </li>
-
                 </ul>
+                <div style="horiz-align: right">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a span class="glyphicon glyphicon-user" asp-area="" asp-page="/kunder/NyKunde">Opretbruger</a>
+                        </li>
+                    </ul>
+                    </div>
+                
             </div>
         </div>
     </nav>

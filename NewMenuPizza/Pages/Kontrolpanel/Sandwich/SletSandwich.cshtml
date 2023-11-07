@@ -1,5 +1,5 @@
 @page
-@model NewMenuPizza.Pages.Kontrolpanel.Sandwich.SletSandwich
+@model NewMenuPizza.Pages.Kontrolpanel.Sandwich.SletSandwichModel
 
 @{
 }
@@ -11,13 +11,13 @@
     <title></title>
 </head>
 <body>
-<h1>Slet drikkervarer fra menukort</h1>
+<h1>Slet Sandwich fra menukort</h1>
+
 <form method="post">
     <div class="form-group>">
-        <label>Drikkevarer Nummer</label><br/>
-        <input class="form-control" asp-for="@Model.SletSandwichNummer"/><br/>
-
-        <input type="submit" value="Slet drikkevarer" class="btn btn-danger"/>
+        <label>Navn</label><br />
+        <input class="form-control" asp-for="@Model.SletSandwich" /><br /> 
+    <input type="submit" value="Slet Sandwich" class="btn btn-success" />
     </div>
 </form>
 </body>

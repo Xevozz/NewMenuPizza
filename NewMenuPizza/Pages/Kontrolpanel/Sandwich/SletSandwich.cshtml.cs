@@ -4,23 +4,23 @@ using NewMenuPizza.Services;
 
 namespace NewMenuPizza.Pages.Kontrolpanel.Sandwich
 {
-    public class SletSandwich : PageModel
+    public class SletSandwichModel : PageModel
     {
         /*
          * Instans field
          */
-        private DrikkevarerRepository _sandwichRepo;
+        private SandwichRepository _sandwichrepo;
         
         /*
          * Property
          */
-        public SletSandwich(DrikkevarerRepository repository)
+        public SletSandwichModel(SandwichRepository repository)
         {
-            _sandwichRepo = repository;
+            _sandwichrepo = repository;
         }
         
         [BindProperty]
-        public int SletSandwichNummer { get; set; }
+        public int SletSandwich { get; set; }
         
         
         public void OnGet()
@@ -30,12 +30,7 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Sandwich
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _sandwichRepo.Slet(SletSandwichNummer);
+            _sandwichrepo.fjern(SletSandwich);
 
             return RedirectToPage("../Index");
         }

@@ -4,17 +4,18 @@
 }
 
 <form method="post">
-    <div class="form-group>">
-        <label>Navn</label><br />
-        <input class="form-control" asp-for="@Model.NySandwich" /><br />
 
-        <label>Pris</label><br />
-        <input class="form-control" asp-for="@Model.NyPris" /><br />
-        
-        <label>Pizza Nummer</label><br />
-        <input class="form-control" asp-for="@Model.NytNummer" /><br />
+        <div class="form-group>">
+            <label>Navn</label><br />
+            <input class="form-control" asp-for="@Model.NySandwich" /><br />
+
+            <label>Pris</label><br />
+            <input class="form-control" asp-for="@Model.NyPris" /><br />
+
+            <label>Sandwich Nummer</label><br />
+            <input class="form-control" asp-for="@Model.NytNummer" /><br />
 
 
-        <input type="submit" value="Opret Ny Pizza" class="btn btn-success"/>
-    </div>
+            <input type="submit" value="Opret Ny Sandwich" class="btn btn-success" />
+        </div>
 </form>

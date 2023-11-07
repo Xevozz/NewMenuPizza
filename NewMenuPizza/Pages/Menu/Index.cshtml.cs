@@ -22,7 +22,9 @@ public class Index : PageModel
      */
     public Index(DrikkevarerRepository drikkevarerRepo, IngrediensRepository ingrediensRepo, PizzaRepository pizzaRepository, SandwichRepository sandwichRepository)
     {
+        _pizzarepo = pizzaRepository;
         _drikkvarerRepo = drikkevarerRepo;
+        _sandwichrepo = sandwichRepository;
         _ingrediensrepo = ingrediensRepo;
         _pizzarepo = pizzaRepository;
         _sandwichrepo = sandwichRepository;
