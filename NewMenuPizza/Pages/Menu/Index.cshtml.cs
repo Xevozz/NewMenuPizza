@@ -20,9 +20,11 @@ public class Index : PageModel
     /*
      * Dependency Injection
      */
-    public Index(DrikkevarerRepository drikkevarerRepo, IngrediensRepository ingrediensRepo)
+    public Index(DrikkevarerRepository drikkevarerRepo, IngrediensRepository ingrediensRepo, PizzaRepository pizzaRepository, SandwichRepository sandwichRepository)
     {
+        _pizzarepo = pizzaRepository;
         _drikkvarerRepo = drikkevarerRepo;
+        _sandwichrepo = sandwichRepository;
         _ingrediensrepo = ingrediensRepo;
     }
     /*

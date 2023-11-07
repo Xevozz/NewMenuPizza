@@ -40,6 +40,7 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
 
             DrikkevarerFolder.Drikkevarer nyDrikkevarer = new DrikkevarerFolder.Drikkevarer(_drikkevarerRepo.GetSidsteNummer(),NytDrikkevarerNavn, NytDrikkevarerPris);
 
+            //DrikkevarerRepository repo = new DrikkevarerRepository(true);
             _drikkevarerRepo.Tilføj(nyDrikkevarer);
 
             return RedirectToPage("../Index");
