@@ -14,7 +14,9 @@ public class Index : PageModel
      */
     private DrikkevarerRepository _drikkvarerRepo;
     private IngrediensRepository _ingrediensrepo;
-
+    private PizzaRepository _pizzarepo;
+    private SandwichRepository _sandwichrepo;
+    
     /*
      * Dependency Injection
      */
