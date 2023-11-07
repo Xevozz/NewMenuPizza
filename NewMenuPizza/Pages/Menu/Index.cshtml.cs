@@ -13,14 +13,16 @@ public class Index : PageModel
      */
     private DrikkevarerRepository _drikkvarerRepo;
     private IngrediensRepository _ingrediensrepo;
+    private PizzaRepository _pizzarepo;
 
     /*
      * Dependency Injection
      */
-    public Index(DrikkevarerRepository drikkevarerRepo, IngrediensRepository ingrediensRepo)
+    public Index(DrikkevarerRepository drikkevarerRepo, IngrediensRepository ingrediensRepo, PizzaRepository pizzaRepository)
     {
         _drikkvarerRepo = drikkevarerRepo;
         _ingrediensrepo = ingrediensRepo;
+        _pizzarepo = pizzaRepository;
     }
     /*
      * Property list
@@ -33,10 +35,10 @@ public class Index : PageModel
 
     public void OnGet()
     {
-        PizzaRepository pizzarepo = new PizzaRepository(true);
+        
 
         Drikkevarers = _drikkvarerRepo.HentAlleDrikkevarer();
-        Pizzas = pizzarepo.HentAllePizza();
+        Pizzas = _pizzarepo.HentAllePizza();
         IngrediensList = _ingrediensrepo.HentAlleIngredienser();
     }
 

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NewMenuPizza.Services;
+using System.ComponentModel.DataAnnotations;
 
 namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
 {
@@ -22,10 +23,10 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
 
         public IActionResult OnPost() 
         {
-
+         
             _pizzarepo.Fjern(SletPizza);
-            
-            return RedirectToPage("Index");
+
+            return RedirectToPage("/Menu/Index"); 
 
         }
     }
