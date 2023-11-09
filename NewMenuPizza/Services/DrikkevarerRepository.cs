@@ -28,18 +28,6 @@ namespace NewMenuPizza.Services
         public DrikkevarerRepository(bool mockData = false)
         {
          _drikkevarerRepo = ReadFromJson();
-         /*_drikkevarerRepo = new Dictionary<int, Drikkevarer>();
-
-         if (mockData)
-         {
-          _drikkevarerRepo.Clear();
-
-          _drikkevarerRepo.Add(GetSidsteNummer(), new Drikkevarer(GetSidsteNummer(), "Pepsi", 25.0));
-          _drikkevarerRepo.Add(GetSidsteNummer(), new Drikkevarer(GetSidsteNummer(), "Pepsi Max", 25.0));
-          _drikkevarerRepo.Add(GetSidsteNummer(), new Drikkevarer(GetSidsteNummer(), "Squash", 25.0));
-          _drikkevarerRepo.Add(GetSidsteNummer(), new Drikkevarer(GetSidsteNummer(), "Faxe Kondi", 25.0));
-         }
-         */
         }
         
         /*
