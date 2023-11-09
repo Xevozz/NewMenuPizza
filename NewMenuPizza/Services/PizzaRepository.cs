@@ -104,8 +104,9 @@ namespace NewMenuPizza.Services
         {
             if (File.Exists(FILENAME))
             {
-                StreamReader sr = File.OpenText(FILENAME);
+                using (StreamReader sr = File.OpenText(FILENAME)) { 
                 return JsonSerializer.Deserialize<Dictionary<int, Pizza>>(sr.ReadToEnd());
+                }
             }
             else
             {
@@ -115,10 +116,14 @@ namespace NewMenuPizza.Services
 
         private void WriteToJson()
         {
-            FileStream fs = new FileStream(FILENAME, FileMode.Create);
-            Utf8JsonWriter writer = new Utf8JsonWriter(fs);
-            JsonSerializer.Serialize(writer, _pizzarepo);
-            fs.Close();
+            using (FileStream fs = new FileStream(FILENAME, FileMode.Create)) {
+                Utf8JsonWriter writer = new Utf8JsonWriter(fs);
+                JsonSerializer.Serialize(writer, _pizzarepo);
+                fs.Close();
+                fs.Dispose();
+                
+            }
+            
         }
     }
 }

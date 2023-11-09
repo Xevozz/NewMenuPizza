@@ -68,6 +68,5 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
                 return Page();
             }
         }
-
     }
 }
