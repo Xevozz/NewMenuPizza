@@ -78,6 +78,7 @@ namespace NewMenuPizza.Services
             if (_pizzarepo.ContainsKey(nummer))
             {
                 Pizza eksisterendePizza = _pizzarepo[nummer];
+                WriteToJson();
             }
             else
             {
