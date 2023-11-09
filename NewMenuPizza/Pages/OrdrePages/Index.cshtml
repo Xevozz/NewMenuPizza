@@ -1,0 +1,38 @@
+@page
+@using NewMenuPizza.OrdreFolder
+@model NewMenuPizza.Pages.OrdrePages.Index
+
+@{
+    ViewData["Title"] = "Kurv";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Kurv</title>
+</head>
+<body>
+<h1>Kurv</h1>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Nummer</th>
+        <th>Navn</th>
+        <th>Pris</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (MenuItem o in Model.MenuItems)
+    {
+        <tr>
+            <td>@o.Nummer</td>
+            <td>@o.Navn</td>
+            <td>@o.Pris</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<label>Samlet beløb </label> : @Model._samletBeløb
+</body>
+</html>

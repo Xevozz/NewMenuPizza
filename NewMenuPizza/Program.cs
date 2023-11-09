@@ -1,4 +1,5 @@
 using NewMenuPizza.Kunder;
+using NewMenuPizza.OrdreFolder;
 using NewMenuPizza.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,11 @@ builder.Services.AddSingleton<DrikkevarerRepository>(new DrikkevarerRepository(t
 
 builder.Services.AddSingleton<IngrediensRepository>(new IngrediensRepository(true));
 
+builder.Services.AddSingleton<MenuItemRepository>(new MenuItemRepository());
+
+builder.Services.AddSingleton<OrdreRepository>(new OrdreRepository());
+
+builder.Services.AddSingleton(new Ordre());
 
 var app = builder.Build();
 

@@ -10,14 +10,15 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
         /*
          * Instans fields
          */
+        private MenuItemRepository _menuItemRepo;
         private DrikkevarerRepository _drikkevarerRepo;
         
         /*
          * property
          */
-        public NyDrikkevarer(DrikkevarerRepository repository)
+        public NyDrikkevarer(MenuItemRepository repository)
         {
-            _drikkevarerRepo = repository;
+            _menuItemRepo = repository;
         }
         
         [BindProperty]
@@ -38,10 +39,10 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
                 return Page();
             }
 
-            DrikkevarerFolder.Drikkevarer nyDrikkevarer = new DrikkevarerFolder.Drikkevarer(_drikkevarerRepo.GetSidsteNummer(),NytDrikkevarerNavn, NytDrikkevarerPris);
+            DrikkevarerFolder.Drikkevarer nyDrikkevarer = new DrikkevarerFolder.Drikkevarer(_menuItemRepo.HentSidsteNummer(),NytDrikkevarerNavn, NytDrikkevarerPris);
 
             //DrikkevarerRepository repo = new DrikkevarerRepository(true);
-            _drikkevarerRepo.Tilføj(nyDrikkevarer);
+            _menuItemRepo.Tilføj(nyDrikkevarer);
 
             return RedirectToPage("../Index");
         }

@@ -1,9 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NewMenuPizza.Services;
-using NewMenuPizza.PizzaFolderTest;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+using KeyNotFoundExecption = System.Collections.Generic.KeyNotFoundException;
+
 
 namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
 {
@@ -52,12 +51,17 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
 
         public IActionResult OnPostChangePizzaer()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            
             try
             {
                 _pizzarepo.OpdaterPizzaNummer(ÆndrePizzaNummer,
                     new PizzaFolderTest.Pizza(ÆndrePizzaNavn, ÆndrePizzaNummer, ÆndrePizzaPris));
 
-                return RedirectToPage("/Menu/Index");
+                return RedirectToPage("../../Menu/Index");
             }
             catch (KeyNotFoundException)
             {
