@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using NewMenuPizza.DrikkevarerFolder;
-using NewMenuPizza.PizzaFolderTest;
-using NewMenuPizza.SandwichFolder;
+using NewMenuPizza.OrdreFolder;
 using NewMenuPizza.Services;
 
 namespace NewMenuPizza.Pages.Menu;
@@ -12,41 +10,49 @@ public class Index : PageModel
     /*
      * Instans felter
      */
-    private DrikkevarerRepository _drikkvarerRepo;
     private IngrediensRepository _ingrediensrepo;
-    private PizzaRepository _pizzarepo;
-    private SandwichRepository _sandwichrepo;
+    private MenuItemRepository _menuItemRepo;
+    private Ordre _ordre;
     
     /*
      * Dependency Injection
      */
-    public Index(DrikkevarerRepository drikkevarerRepo, IngrediensRepository ingrediensRepo, PizzaRepository pizzaRepository, SandwichRepository sandwichRepository)
+    public Index(MenuItemRepository menuItemRepository, Ordre ordre)
     {
-        _pizzarepo = pizzaRepository;
-        _drikkvarerRepo = drikkevarerRepo;
-        _sandwichrepo = sandwichRepository;
-        _ingrediensrepo = ingrediensRepo;
-        _pizzarepo = pizzaRepository;
-        _sandwichrepo = sandwichRepository;
+        _menuItemRepo = menuItemRepository;
+        _ordre = ordre;
     }
     /*
      * Property list
      */
-    public List<Drikkevarer> Drikkevarers { get; set; }
-    public List<Pizza> Pizzas { get; set; }
-    public List<Sandwich> Sandwiches { get; set; }
-    public List<Ingrediens> IngrediensList { get; set; }
+    public List<MenuItem> MenuItems { get; set; }
 
     public void OnGet()
     {
+        MenuItems = _menuItemRepo.HentAlleMenuItems();
+    }
+    
+    public IActionResult OnPostTilføjTilKurv(int itemId)
+    {
+        var item = _menuItemRepo.HentMenuItem(itemId);
         
+        TilføjItemTilKurv(item);
 
-        Drikkevarers = _drikkvarerRepo.HentAlleDrikkevarer();
-        Pizzas = _pizzarepo.HentAllePizza();
-        IngrediensList = _ingrediensrepo.HentAlleIngredienser();
-        Sandwiches = _sandwichrepo.HentAlleSandwiches();
+        return RedirectToPage();
     }
 
+    public void TilføjItemTilKurv(MenuItem item)
+    {
+        _ordre.TilføjMenuItem(item);
+    }
+
+    public IActionResult OnPostGåTilKurv()
+    {
+        //_ordreRepo.TilføjOrdre(1, _ordre);
+
+        return RedirectToPage("../OrdrePages/Index");
+    }
+    
     public IActionResult OnPost()
     {
         return RedirectToPage("");

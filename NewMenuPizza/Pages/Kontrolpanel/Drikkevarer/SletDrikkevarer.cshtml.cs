@@ -10,13 +10,14 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
          * Instans field
          */
         private DrikkevarerRepository _drikkevarerRepo;
+        private MenuItemRepository _menuItemRepo;
         
         /*
          * Property
          */
-        public SletDrikkevarer(DrikkevarerRepository repository)
+        public SletDrikkevarer(MenuItemRepository repository)
         {
-            _drikkevarerRepo = repository;
+            _menuItemRepo = repository;
         }
         
         [BindProperty]
@@ -35,7 +36,7 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
                 return Page();
             }
 
-            _drikkevarerRepo.Slet(SletDrikkevarerNummer);
+            _menuItemRepo.Slet(SletDrikkevarerNummer);
 
             return RedirectToPage("../Index");
         }

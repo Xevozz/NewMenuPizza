@@ -12,13 +12,14 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
          */
 
         private readonly DrikkevarerRepository _drikkevarerRepo;
+        private MenuItemRepository _menuItemRepo;
         
         /*
          * Property 
          */
-        public OpdaterDrikkevarer(DrikkevarerRepository repository)
+        public OpdaterDrikkevarer(MenuItemRepository repository)
         {
-            _drikkevarerRepo = repository;
+            _menuItemRepo = repository;
         }
         
         [BindProperty] 
@@ -42,8 +43,8 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
         {
             try
             {
-                var drikkevarer = _drikkevarerRepo.HentDrikkevarer(ÆndreDrikkevarerNummer);
-                ÆndreDrikkevarerNavn = drikkevarer.Name;
+                var drikkevarer = _menuItemRepo.HentMenuItem(ÆndreDrikkevarerNummer);
+                ÆndreDrikkevarerNavn = drikkevarer.Navn;
                 ÆndreDrikkevarerPris = drikkevarer.Pris;
                 NummerDeaktiveret = true;
             }
@@ -65,7 +66,7 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
 
             try
             {
-                _drikkevarerRepo.Opdater(ÆndreDrikkevarerNummer,
+                _menuItemRepo.Opdater(ÆndreDrikkevarerNummer,
                     new DrikkevarerFolder.Drikkevarer(ÆndreDrikkevarerNummer, ÆndreDrikkevarerNavn,
                         ÆndreDrikkevarerPris));
 
@@ -76,11 +77,6 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
                 ModelState.AddModelError("", "Drikkevaren kunne ikke opdateres, da den ikke findes.");
                 return Page();
             }
-        }
-        
-        public IActionResult OnPostCancel()
-        {
-            return RedirectToPage("../Index");
         }
     }
 }

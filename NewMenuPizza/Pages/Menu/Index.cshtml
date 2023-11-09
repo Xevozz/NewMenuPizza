@@ -10,53 +10,34 @@
 }
 
 <h1>Menukort</h1>
-    <h2>Pizza</h2>
+<h2>Menu</h2>
+<form method="post" asp-page-handler="FindObjekt">
     <table class="table table-hover">
         <thead>
             <tr>
                 <th>Nummer</th>
                 <th>Navn</th>
                 <th>Pris</th>
-             
             </tr>
         </thead>
         <tbody>
-            @foreach (Pizza p in Model.Pizzas)
+            @foreach (MenuItem d in Model.MenuItems)
             {
                 <tr>
-                    <td>@p.Nummer</td>
-                    <td>@p.Navn</td>
-                    <td>@p.Pris kr.</td>
+                    <td>@d.Nummer</td>
+                    <td>@d.Navn</td>
+                    <td>@d.Pris kr.</td>
+                    <td>
+                        <form method="post" asp-page-handler="TilføjTilKurv">
+                            <input type="hidden" name="itemId" value="@d.Nummer"/>
+                            <input type="submit" value="Tilføj" class="btn btn-success"/>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>
-       
     </table>
-
-    <h2>Drikkevarer</h2>
-<table class="table table-hover">
-<tbody>
-@foreach (Drikkevarer d in Model.Drikkevarers)
-{
-    <tr>
-        <td>@d.Nummer</td>
-        <td>@d.Name</td>
-        <td>@d.Pris kr.</td>
-    </tr>
-}
-</tbody>
-</table>
-
-        <h2>Sandwiches</h2>
-    <table class="table table-hover">
-        <tbody>
-        @foreach (Sandwich d in Model.Sandwiches)
-        {
-            <tr>
-                <td>@d.Nummer</td>
-                <td>@d.Navn</td>
-                <td>@d.Pris kr.</td>
-            </tr>
-        }
-        </tbody>
-    </table>
+</form>
+<form method="post" asp-page-handler="GåTilKurv">
+    <input type="submit" value="Gå til kurv" class="btn btn-success">
+</form>
