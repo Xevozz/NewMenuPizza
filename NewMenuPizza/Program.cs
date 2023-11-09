@@ -9,7 +9,7 @@ builder.Services.AddRazorPages();
 //indsætter kundeRepository
 builder.Services.AddSingleton<KundeRepository>(new KundeRepository(true));
 
-builder.Services.AddSingleton<PizzaRepository>(new PizzaRepository(true));
+builder.Services.AddSingleton<PizzaRepository>(new PizzaRepository();
 
 builder.Services.AddSingleton<SandwichRepository>(new SandwichRepository(true));
 

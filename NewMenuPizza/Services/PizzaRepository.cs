@@ -1,5 +1,8 @@
-﻿using NewMenuPizza.PizzaFolderTest;
+﻿using Microsoft.AspNetCore.Routing.Constraints;
+using NewMenuPizza.PizzaFolderTest;
 using System.Diagnostics.Eventing.Reader;
+using System.Drawing.Text;
+using System.Text.Json;
 
 namespace NewMenuPizza.Services
 {
@@ -17,17 +20,10 @@ namespace NewMenuPizza.Services
         }
 
         // Default Constructor
-        public PizzaRepository(bool mockdata = false)
+        public PizzaRepository()
         {
-            _pizzarepo = new Dictionary<int, Pizza>();
-            if (mockdata)
-            {
-                _pizzarepo.Clear();
-                _pizzarepo.Add(SidsteNummer(), new Pizza("Hawaii", 85, SidsteNummer()));
-                _pizzarepo.Add(SidsteNummer(), new Pizza("Pepperoni", 85, SidsteNummer()));
-                _pizzarepo.Add(SidsteNummer(), new Pizza("Napoli", 75, SidsteNummer()));
-
-            }
+            _pizzarepo = ReadFromJson();
+         
         }
 
         public List<Pizza> HentAllePizza()
@@ -43,6 +39,7 @@ namespace NewMenuPizza.Services
         public void Tilføj(Pizza pizza)
         {
             _pizzarepo.Add(pizza.Nummer, pizza);
+            WriteToJson();
         }
 
 
@@ -52,6 +49,7 @@ namespace NewMenuPizza.Services
             if (_pizzarepo.ContainsKey(nummer))
             {
                 _pizzarepo.Remove(nummer);
+                WriteToJson();
             }
             else
             {
@@ -100,5 +98,26 @@ namespace NewMenuPizza.Services
             }
         }
 
+        public const string FILENAME = "PizzaRepository.Json";
+        private Dictionary<int, Pizza> ReadFromJson()
+        {
+            if (File.Exists(FILENAME))
+            {
+                StreamReader sr = File.OpenText(FILENAME);
+                return JsonSerializer.Deserialize<Dictionary<int, Pizza>>(sr.ReadToEnd());
+            }
+            else
+            {
+                return new Dictionary<int, Pizza>();
+            }
+        }
+
+        private void WriteToJson()
+        {
+            FileStream fs = new FileStream(FILENAME, FileMode.Create);
+            Utf8JsonWriter writer = new Utf8JsonWriter(fs);
+            JsonSerializer.Serialize(writer, _pizzarepo);
+            fs.Close();
+        }
     }
 }
