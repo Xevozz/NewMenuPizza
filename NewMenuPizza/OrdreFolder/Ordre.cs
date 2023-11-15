@@ -15,12 +15,8 @@ public class Ordre
     /*
      * Properties
      */
-    public List<MenuItem> OrdreListe
-    {
-        get { return _ordreListe; }
-        set { _ordreListe = value; }
-    }
-    
+    public List<MenuItem> OrdreListe { get; set; }
+
     /*
      * Constructor
      */
@@ -28,7 +24,7 @@ public class Ordre
     {
         _ordreListe = new List<MenuItem>();
     }
-    
+
     /*
      * Methods
      */
@@ -37,39 +33,31 @@ public class Ordre
         _ordreListe.Add(menuItem);
     }
 
-    public double SumAfAlleItems()
-    {
-        double sum = 0;
-        foreach (var element in _ordreListe)
-        {
-            sum = sum + element.Pris;
-        }
-
-        return sum;
-    }
+    public double SumAfAlleItems() => 
+        _ordreListe.Max(x => x.Pris);
 
     public List<MenuItem> HentAlleOrdre()
     {
         return _ordreListe.ToList();
     }
-    
+
     private List<MenuItem> ReadFromJson()
     {
         if (File.Exists(_fileName))
         {
             using (StreamReader file = File.OpenText(_fileName))
-                using (JsonTextReader reader = new JsonTextReader(file))
-                {
-                    JsonSerializer serializer = new JsonSerializer();
-                    return serializer.Deserialize<List<MenuItem>>(reader);
-                }
+            using (JsonTextReader reader = new JsonTextReader(file))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                return serializer.Deserialize<List<MenuItem>>(reader);
+            }
         }
         else
         {
             return new List<MenuItem>();
         }
     }
-    
+
     private void WriteToJson()
     {
         using (StreamWriter file = File.CreateText(_fileName))
