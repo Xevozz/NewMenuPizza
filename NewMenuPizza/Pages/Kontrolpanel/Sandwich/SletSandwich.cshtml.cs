@@ -30,7 +30,7 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Sandwich
 
         public IActionResult OnPost()
         {
-            _sandwichrepo.fjern(SletSandwich);
+            _sandwichrepo.Remove(SletSandwich);
 
             return RedirectToPage("../Index");
         }
