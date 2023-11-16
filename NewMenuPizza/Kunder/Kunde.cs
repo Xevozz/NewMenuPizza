@@ -17,31 +17,18 @@ public class Kunde
 
     //properties
 
-    public string Navn
-    {
-        get { return _navn; }
-        set { _navn = value; }
-    }
+    public string Navn { get; set; }
+    public int KundeNummer { get; set; }
 
-    public int KundeNummer
-    {
-        get { return _kundenummer; }
-        set { _kundenummer = value; }
-    }
-
-    public string Tlf
-    {
-        get { return _tlf; }
-        set { _tlf = value; }
-    }
-
+    public string Tlf { get; set; }
+    
     //konstruktør
 
     public Kunde()
     {
-        _navn = "";
+        _navn = string.Empty;
         _kundenummer = 0;
-        _tlf = "";
+        _tlf = string.Empty;
     }
 
     public Kunde(string navn, int kundenummer, string tlf)
