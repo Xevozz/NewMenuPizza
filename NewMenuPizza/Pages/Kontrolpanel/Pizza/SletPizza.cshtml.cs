@@ -7,11 +7,11 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
 {
     public class SletPizzaModel : PageModel
     {
-        private PizzaRepository _pizzarepo;
+        private MenuItemRepository _menuItemRepo;
 
-        public SletPizzaModel(PizzaRepository pizzarepo)
+        public SletPizzaModel(MenuItemRepository repository)
         {
-            _pizzarepo = pizzarepo;
+            _menuItemRepo = repository;
         }
 
         [BindProperty]
@@ -23,10 +23,10 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
 
         public IActionResult OnPost() 
         {
-         
-            _pizzarepo.Fjern(SletPizza);
 
-            return RedirectToPage("/Menu/Index"); 
+            _menuItemRepo.Slet(SletPizza);
+
+            return RedirectToPage("../Index"); 
 
         }
     }

@@ -8,11 +8,11 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
 {
     public class ÆndrePizzaModel : PageModel
     {
-        private PizzaRepository _pizzarepo;
+        private MenuItemRepository _menuItemRepo;
 
-        public ÆndrePizzaModel(PizzaRepository pizzarepo)
+        public ÆndrePizzaModel(MenuItemRepository repository)
         {
-            _pizzarepo = pizzarepo;
+            _menuItemRepo = repository;
         }
 
         [BindProperty]
@@ -20,7 +20,7 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
 
 
         [BindProperty]
-        public int ÆndrePizzaPris { get; set; }
+        public double ÆndrePizzaPris { get; set; }
 
         [BindProperty]
         public int ÆndrePizzaNummer { get; set; }
@@ -37,7 +37,7 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
         {
             try
             {
-                var pizza = _pizzarepo.HentPizzaNummer(ÆndrePizzaNummer);
+                var pizza = _menuItemRepo.HentMenuItem(ÆndrePizzaNummer);
                 ÆndrePizzaNavn = pizza.Navn;
                 ÆndrePizzaPris = pizza.Pris;
                 NummerDeaktiveret = true;
@@ -58,8 +58,8 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Pizza
             
             try
             {
-                _pizzarepo.OpdaterPizzaNummer(ÆndrePizzaNummer,
-                    new PizzaFolderTest.Pizza(ÆndrePizzaNavn, ÆndrePizzaNummer, ÆndrePizzaPris));
+                _menuItemRepo.Opdater(ÆndrePizzaNummer,
+                    new PizzaFolderTest.Pizza(ÆndrePizzaNavn, ÆndrePizzaPris, ÆndrePizzaNummer));
 
                 return RedirectToPage("../../Menu/Index");
             }

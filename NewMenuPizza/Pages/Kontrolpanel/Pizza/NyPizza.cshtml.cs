@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using NewMenuPizza.Pages.Kontrolpanel.Drikkevarer;
 using NewMenuPizza.PizzaFolderTest;
 using NewMenuPizza.Services;
 using System.ComponentModel.DataAnnotations;
@@ -7,12 +8,12 @@ using System.ComponentModel.DataAnnotations;
 namespace NewMenuPizza.Pages.Menu
 {
     public class NyPizzaModel : PageModel
-    { 
-        private PizzaRepository _pizzarepo;
+    {
+        private MenuItemRepository _menuItemRepo;
 
-        public NyPizzaModel(PizzaRepository pizzarepo)
+        public NyPizzaModel(MenuItemRepository repository)
         {
-            _pizzarepo = pizzarepo;
+            _menuItemRepo = repository;
         }
 
         [BindProperty]
@@ -40,10 +41,10 @@ namespace NewMenuPizza.Pages.Menu
             }
 
             Pizza nyPizza = new Pizza(NyPizzaNavn, NyPris, NytNummer);
-           
-            _pizzarepo.Tilføj(nyPizza);
 
-            return RedirectToPage("/Menu/Index");
+            _menuItemRepo.Tilføj(nyPizza);
+
+            return RedirectToPage("../Index");
         }
     }
 }
