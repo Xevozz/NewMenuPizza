@@ -11,7 +11,7 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Drikkevarer
          * Instans fields
          */
         private MenuItemRepository _menuItemRepo;
-        private DrikkevarerRepository _drikkevarerRepo;
+        //private DrikkevarerRepository _drikkevarerRepo;
         
         /*
          * property

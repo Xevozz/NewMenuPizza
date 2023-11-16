@@ -3,19 +3,24 @@
 @{
 }
 
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Ny Sandwich</title>
+</head>
+<body>
+<h1>Opret ny Sandwich</h1>
 <form method="post">
-
-        <div class="form-group>">
-            <label>Navn</label><br />
-            <input class="form-control" asp-for="@Model.NySandwich" /><br />
-
-            <label>Pris</label><br />
-            <input class="form-control" asp-for="@Model.NyPris" /><br />
-
-            <label>Sandwich Nummer</label><br />
-            <input class="form-control" asp-for="@Model.NytNummer" /><br />
-
-
-            <input type="submit" value="Opret Ny Sandwich" class="btn btn-success" />
-        </div>
+    <div class="form-group">
+        <label>Sandwich navn</label><br />
+        <input class="form-control" asp-for="@Model.NytSandwichNavn"><br />
+        
+        <label>Sandwich pris</label><br/>
+        <input class="form-control" asp-for="@Model.NytSandwichPris"/><br/>
+        
+        <input type="submit" value="Opret ny sandwich" class="btn btn-success"/>
+    </div>
 </form>
+</body>
+</html>

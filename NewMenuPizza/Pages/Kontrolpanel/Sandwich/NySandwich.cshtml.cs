@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using NewMenuPizza.Pages.Kontrolpanel.Drikkevarer;
 using NewMenuPizza.SandwichFolder;
 using NewMenuPizza.Services;
 
@@ -7,32 +8,42 @@ namespace NewMenuPizza.Pages.Menu
 {
     public class NySandwichModel : PageModel
     { 
-        private SandwichRepository _sandwichrepo;
-
-        public NySandwichModel(SandwichRepository sandwichrepo)
-        {
-            _sandwichrepo = sandwichrepo;
-        }
-
-        [BindProperty]
-        public string NySandwich { get; set; }
-
-        [BindProperty]
-        public int NyPris { get; set; }
-
-        [BindProperty]
-        public int NytNummer { get; set; }
-       
+        /*
+         * Instans
+         */
+        private MenuItemRepository _menuItemReop;
         
+        /*
+         * Property
+         */
+        public NySandwichModel(MenuItemRepository repository)
+        {
+            _menuItemReop = repository;
+        }
+        
+        [BindProperty]
+        public string NytSandwichNavn { get; set; }
+        
+        [BindProperty]
+        public double NytSandwichPris { get; set; }
+
         public void OnGet()
         {
+            
         }
 
-        public void OnPost() 
+        public IActionResult OnPost()
         {
-            Sandwich nySandwich = new (NySandwich, NyPris, NytNummer);
-           
-            _sandwichrepo.Tilføj(nySandwich);
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            Sandwich nySandwich = new Sandwich(_menuItemReop.HentSidsteNummer(), NytSandwichNavn, NytSandwichPris);
+
+            _menuItemReop.Tilføj(nySandwich);
+
+            return RedirectToPage("../Index");
         }
     }
 }

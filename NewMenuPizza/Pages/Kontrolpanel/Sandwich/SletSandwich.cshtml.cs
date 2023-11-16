@@ -9,18 +9,18 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Sandwich
         /*
          * Instans field
          */
-        private SandwichRepository _sandwichrepo;
+        private MenuItemRepository _menuItemRepo;
         
         /*
          * Property
          */
-        public SletSandwichModel(SandwichRepository repository)
+        public SletSandwichModel(MenuItemRepository repository)
         {
-            _sandwichrepo = repository;
+            _menuItemRepo = repository;
         }
         
         [BindProperty]
-        public int SletSandwich { get; set; }
+        public int SletSandwichNummer { get; set; }
         
         
         public void OnGet()
@@ -30,7 +30,12 @@ namespace NewMenuPizza.Pages.Kontrolpanel.Sandwich
 
         public IActionResult OnPost()
         {
-            _sandwichrepo.fjern(SletSandwich);
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            
+            _menuItemRepo.Slet(SletSandwichNummer);
 
             return RedirectToPage("../Index");
         }

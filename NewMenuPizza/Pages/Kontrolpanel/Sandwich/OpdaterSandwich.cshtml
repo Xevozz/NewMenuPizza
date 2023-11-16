@@ -1,0 +1,39 @@
+@page
+@model NewMenuPizza.Pages.Kontrolpanel.Sandwich.OpdaterSandwich
+
+@{
+}
+
+<html>
+<head>
+    <title>Ændre Sandwich</title>
+</head>
+<body>
+<h1>Ændre Sandwich</h1>
+<form method="post" asp-page-handler="LoadSandwich">
+    <div class="form-group">
+        <label for="sandwichNummer">Sandwich nummer</label>
+        <input type="text" id="sandwichNummer" class="form-control" asp-for="ÆndreSandwichNummer"/>
+        <input type="submit" value="Hent Sandwich" class="btn btn-primary"/>
+    </div>
+</form>
+
+@if (Model.NummerDeaktiveret)
+{
+    <form method="post" asp-page-handler="ChangeSandwich">
+        <div class="form-group">
+            
+            <input type="hidden" asp-for="ÆndreSandwichNummer" />
+            
+            <label for="sandwichNavn">Sandwich navn</label>
+            <input type="text" id="sandwichNavn" class="form-control" asp-for="ÆndreSandwichNavn"/>
+
+            <label for="sandwichPris">Sandwich pris</label>
+            <input type="text" id="sandwichPris" class="form-control" asp-for="ÆndreSandwichPris"/>
+
+            <input type="submit" value="Opdater sandwich" class="btn btn-success"/>
+        </div>
+    </form>
+}
+</body>
+</html>
