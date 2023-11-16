@@ -15,23 +15,23 @@ public class Ordre
     /*
      * Properties
      */
-    public List<MenuItem> OrdreListe
-    {
-        get { return _ordreListe; }
-        set { _ordreListe = value; }
-    }
+    public List<MenuItem> OrdreListe { get; set; }
+    
     
     /*
      * Constructor
      */
+    
     public Ordre()
     {
         _ordreListe = new List<MenuItem>();
     }
     
-    /*
-     * Methods
-     */
+    
+      /*
+     // * Methods
+     // */
+     
     public void TilføjMenuItem(MenuItem menuItem)
     {
         _ordreListe.Add(menuItem);
